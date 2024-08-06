@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div id="navigation" class="relative w-full bg-white text-gray-900 transition-colors duration-300">
+        <div class="bg-green-700 py-2 "></div>
+        <div class="max-w-7xl mx-auto px-6 py-10 flex items-center justify-between relative">
+            <a href="index.html">
+                <img src="./assets/logo.png" alt="Detector Mania" class="w-44 md:w-56">
+            </a>
+
+            <ul class="hidden xl:flex items-center gap-3 uppercase font-semibold text-xs">
+                <li><a href="index.html" class="hover:text-green-600 transition-all">Home</a></li>
+                <li><a href="magnet.html" class="hover:text-green-600 transition-all">Magnet Fishing</a></li>
+                <li><a href="news.html" class="hover:text-green-600 transition-all">News</a></li>
+                <li><a href="trekking.html" class="hover:text-green-600 transition-all">Trekking</a></li>
+                <li class="flex items-center gap-1">
+                    <p><a href="#recension">Recension</a></p>
+                    <p class="text-xs p-1 rounded-md bg-yellow-100 flex items-center gap-1">New <img class="w-3" src="path/to/flammable.svg" alt=""></p>
+                </li>
+                <li><a href="schede.html" class="hover:text-green-600 transition-all">Schede Tecniche</a></li>
+                <li><a href="arte.html" class="hover:text-green-600 transition-all">Arte e storia</a></li>
+                <li><a href="legislatura.html" class="hover:text-green-600 transition-all">Legislatura</a></li>
+            </ul>
+
+            <div class="flex items-center gap-5 text-xl relative">
+                <i class="fas fa-circle-half-stroke text-xl cursor-pointer" onclick="toggleDarkMode()"></i>
+                <div class="relative">
+                    <i class="fas fa-bell cursor-pointer relative text-gray-900" onclick="toggleNotifications()"></i>
+                    <div class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border border-red-500"></div>
+                    <div id="notifications" class="hidden absolute z-20 top-full right-0 mt-2 w-64 border rounded-md shadow-lg bg-white text-gray-900 border-gray-300">
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold">Notifications</h4>
+                            <ul class="mt-2 text-sm">
+                                <li class="py-2 border-b">New comment on your post</li>
+                                <li class="py-2 border-b">New follower</li>
+                                <li class="py-2 border-b">Update available</li>
+                                <li class="py-2">Maintenance scheduled</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center">
+                    <i class="fas fa-magnifying-glass bg-green-700 text-white p-2 rounded-md cursor-pointer" onclick="toggleSearch()"></i>
+                    <input id="searchInput" type="text" placeholder="Search..." class="hidden p-2 pl-10 border rounded-l-lg outline-none transition-transform duration-300 ease-in-out">
+                    <button id="clearSearch" class="hidden p-2 text-white bg-red-500 rounded-r-lg transition-transform duration-300 ease-in-out" onclick="clearSearch()">
+                        <i class="fas fa-x"></i>
+                    </button>
+                </div>
+                <i class="fas fa-bars bg-green-700 text-white p-2 text-4xl rounded-md cursor-pointer" onclick="showMobileLinks()"></i>
+            </div>
+        </div>
+        <div id="mobileNavLinks" class="fixed inset-0 z-20 flex hidden">
+            <div class="fixed inset-0 bg-black opacity-50" onclick="hideMobileLinks()"></div>
+            <div class="absolute top-0 right-0 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-full p-5 shadow-lg bg-white text-gray-900 transition-transform duration-300 ease-in-out">
+                <h4 class="text-3xl absolute top-12 right-12 cursor-pointer" onclick="hideMobileLinks()">
+                    <i class="fas fa-x"></i>
+                </h4>
+                <ul class="flex flex-col px-6 text-xl mt-32 gap-3 uppercase font-semibold">
+                    <li><a href="index.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Home</a></li>
+                    <li><a href="magnet.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Magnet Fishing</a></li>
+                    <li><a href="news.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">News</a></li>
+                    <li><a href="trekking.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Trekking</a></li>
+                    <li class="flex items-center gap-2">
+                        <p><a href="#recension" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Recension</a></p>
+                        <p class="text-xs p-1 rounded-md bg-yellow-100 text-black flex items-center gap-1"><img class="w-3" src="path/to/flammable.svg" alt=""> New</p>
+                    </li>
+                    <li><a href="schede.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Schede Tecniche</a></li>
+                    <li><a href="arte.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Arte e storia</a></li>
+                    <li><a href="legislatura.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Legislatura</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <main class="p-4">
+        <section class="max-w-7xl mx-auto">
+            <div class="mb-0 md:mb-12">
+                <div class="flex flex-col gap-3 md:flex-row md:items-center justify-between">
+                    <h1 class="text-3xl md:text-5xl font-bold">Schede tecniche</h1>
+                    <div class="flex items-center gap-8 md:hidden">
+                        <p class="uppercase text-sm font-semibold cursor-pointer" id="filter-toggle">Filtra</p>
+                        <div class="flex items-center bg-green-100 rounded-full px-4 py-2 shadow-md w-full max-w-md">
+                            <input type="text" placeholder="Cerca un modello di device..." class="bg-transparent outline-none w-full text-black">
+                            <i class="fa fa-search h-5 w-5 text-gray-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center bg-green-100 rounded-full px-4 py-2 shadow-md w-full max-w-md">
+                        <input type="text" placeholder="Cerca un modello di device..." class="bg-transparent outline-none w-full text-black">
+                        <i class="fa fa-search h-5 w-5 text-gray-500 cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay for filter -->
+            <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center hidden transition-opacity duration-500 ease-in-out">
+                <div class="bg-white text-black p-6 rounded-lg shadow-lg w-11/12 max-w-md relative max-h-[90vh] overflow-y-auto">
+                    <button class="absolute top-2 text-4xl right-2 text-gray-600 hover:text-gray-900" id="overlay-close">&times;</button>
+                    <h2 class="text-xl font-semibold mb-4">Filtri</h2>
+                    <div class="space-y-4">
+                        <!-- Brand -->
+                        <div class="border-b py-4">
+                            <button class="flex justify-between w-full" id="brand-toggle">
+                                <span class="uppercase font-semibold text-lg">MARCA</span>
+                                <span class="chevron-down"><i class="fa fa-chevron-down"></i></span>
+                            </button>
+                            <div id="brand-content" class="mt-2 transition-all duration-500 hidden">
+                                <label class="block">
+                                    <input type="checkbox" class="mr-2">
+                                    Samsung
+                                </label>
+                                <label class="block">
+                                    <input type="checkbox" class="mr-2">
+                                    Huawei
+                                </label>
+                                <button class="text-blue-500 mt-2">VEDI ALTRI</button>
+                            </div>
+                        </div>
+                        <!-- Other filters (Vote, Display, Camera, etc.) go here similarly -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 my-20">
+            <div class="md:col-span-1">
+                <div class="hidden md:block">
+                    <h1 class="uppercase font-semibold text-lg mb-5">Filtri</h1>
+                    
+                    <div class="border-b pb-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('brand')">
+                        <span class="uppercase font-semibold text-lg">MARCA</span>
+                        <span id="brand-icon">
+                          <i class="fas fa-chevron-down"></i>
+                        </span>
+                      </button>
+                      <div id="brand-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                          <input type="checkbox" class="mr-2" />
+                          Samsung
+                        </label>
+                        <label class="block">
+                          <input type="checkbox" class="mr-2" />
+                          Huawei
+                        </label>
+                        <button class="text-blue-500 mt-2">VEDI ALTRI</button>
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('vote')">
+                        <span class="uppercase font-semibold text-lg">VOTO</span>
+                        <span id="vote-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="vote-content" class="mt-2 transition-all duration-500 hidden">
+                        <span>MAGGIORE O UGUALE A 0</span>
+                        <input type="range" min="1" max="18" class="w-full" />
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('display')">
+                        <span class="uppercase font-semibold text-lg">DISPLAY</span>
+                        <span id="display-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="display-content" class="mt-2 transition-all duration-500 hidden">
+                        <input type="range" min="1" max="18" class="w-full" />
+                        <span>1 - 18 POLLICI</span>
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('camera')">
+                        <span class="uppercase font-semibold text-lg">FOTOCAMERA</span>
+                        <span id="camera-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="camera-content" class="mt-2 transition-all duration-500 hidden">
+                        <!-- Add specific filter options for Fotocamera -->
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('front-camera')">
+                        <span class="uppercase font-semibold text-lg">FOTOCAMERA FRONTALE</span>
+                        <span id="front-camera-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="front-camera-content" class="mt-2 transition-all duration-500 hidden">
+                        <!-- Add specific filter options for Fotocamera Frontale -->
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('ram')">
+                        <span class="uppercase font-semibold text-lg">RAM</span>
+                        <span id="ram-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="ram-content" class="mt-2 transition-all duration-500 hidden">
+                        <!-- Add specific filter options for RAM -->
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('memory')">
+                        <span class="uppercase font-semibold text-lg">MEMORIA</span>
+                        <span id="memory-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="memory-content" class="mt-2 transition-all duration-500 hidden">
+                        <!-- Add specific filter options for Memoria -->
+                      </div>
+                    </div>
+                  
+                    <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('os')">
+                        <span class="uppercase font-semibold text-lg">SISTEMA OPERATIVO</span>
+                        <span id="os-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="os-content" class="mt-2 transition-all duration-500 hidden">
+                        <!-- Add specific filter options for Sistema Operativo -->
+                      </div>
+                    </div>
+                  
+                    <div class="py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('type')">
+                        <span class="uppercase font-semibold text-lg">TIPO</span>
+                        <span id="type-icon">
+                          <i class="fas fa-chevron-right"></i>
+                        </span>
+                      </button>
+                      <div id="type-content" class="mt-2 transition-all duration-500 hidden">
+                        <!-- Add specific filter options for Tipo -->
+                      </div>
+                    </div>
+                  </div>
+                  
+            </div>
+            <div class="md:col-span-3">
+                <div>
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-7">
+                      <!-- Product Item -->
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Repeat the above block for each product item -->
+                      <!-- Example repeated block -->
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="rounded-xl p-3 shadow-lg cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                        <a href="details.html"> 
+                          <img
+                            src="./assets/metal_3.png"
+                            alt="item"
+                            class="w-14 md:w-24 mb-2 mx-auto object-cover"
+                          />
+                        </a>
+                        <div class="flex flex-col items-center gap-3">
+                          <h3 class="text-lg md:text-2xl font-bold text-center">Nokta FindX</h3>
+                          <div class="flex flex-col gap-1 w-full">
+                            <button class="bg-green-500 text-sm md:text-base hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Scheda Technica
+                            </button>
+                            <a href="/confronto" class="text-center bg-green-900 text-sm md:text-base hover:bg-green-950 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                              Compara
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Add more product items as needed -->
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class=" sticky top-full">
+        <div class="bg-green-700 py-8 px-6 text-white">
+          <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
+            <div class="lg:w-4/5">
+              <img src="./assets/FooterLogo.png" alt="Detector Mania" class="mb-3"/>
+              <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore expedita aliquid doloremque pariatur in aliquam rerum accusamus nemo aut.</p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl font-semibold">Categorie</h2>
+              <ul class="flex flex-col gap-2">
+                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">News</a></li>
+                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Metal Detecting</a></li>
+                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Metal Detector per Tutti</a></li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h2 class="text-2xl font-semibold">Link Utili</h2>
+              <ul class="flex flex-col gap-2">
+                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Chi Siamo</a></li>
+                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Contatti</a></li>
+                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Ultimi articoli</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-800 py-4 px-2 text-white">
+          <p class="text-xs text-center">Copyrights <i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear());</script> <span class="font-semibold">Detector Mania</span> | Lorem ipsum dolor sit. | Privacy e Cookie Policy - Redazione - design by <span class="font-semibold">Cromia</span></p>
+        </div>
+      </footer>
+
+    <script>
+        const darkMode = false;
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('bg-gray-800');
+            document.body.classList.toggle('text-white');
+            document.body.classList.toggle('bg-white');
+            document.body.classList.toggle('text-gray-900');
+        }
+
+        function toggleNotifications() {
+            document.getElementById('notifications').classList.toggle('hidden');
+        }
+
+        function toggleSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const clearSearch = document.getElementById('clearSearch');
+            searchInput.classList.toggle('hidden');
+            clearSearch.classList.toggle('hidden');
+        }
+
+        function clearSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.value = '';
+            toggleSearch();
+        }
+
+        function showMobileLinks() {
+            document.getElementById('mobileNavLinks').classList.remove('hidden');
+            document.getElementById('mobileNavLinks').classList.add('flex');
+        }
+
+        function hideMobileLinks() {
+            document.getElementById('mobileNavLinks').classList.remove('flex');
+            document.getElementById('mobileNavLinks').classList.add('hidden');
+        }
+
+        // JavaScript for toggle functions
+        document.getElementById('filter-toggle').addEventListener('click', function() {
+            document.getElementById('overlay').classList.toggle('hidden');
+        });
+
+        document.getElementById('overlay-close').addEventListener('click', function() {
+            document.getElementById('overlay').classList.add('hidden');
+        });
+
+        document.getElementById('brand-toggle').addEventListener('click', function() {
+            document.getElementById('brand-content').classList.toggle('hidden');
+        });
+
+        function toggleSection(section) {
+    const content = document.getElementById(`${section}-content`);
+    const icon = document.getElementById(`${section}-icon`).querySelector('i');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.remove('fa-chevron-right');
+      icon.classList.add('fa-chevron-down');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-right');
+    }
+  }
+
+  document.getElementById('overlay-close').addEventListener('click', () => {
+  document.getElementById('overlay').classList.add('hidden');
+});
+
+function toggleOverlay() {
+  const overlay = document.getElementById('overlay');
+  overlay.classList.toggle('hidden');
+}
+
+function toggleSection(section) {
+  const content = document.getElementById(`${section}-content`);
+  const chevron = document.getElementById(`${section}-chevron`);
+  const isOpen = !content.classList.contains('hidden');
+
+  content.classList.toggle('hidden', isOpen);
+  chevron.innerHTML = isOpen ? '<i class="fa fa-chevron-right"></i>' : '<i class="fa fa-chevron-down"></i>';
+}
+
+    </script>
+</body>
+</html>
