@@ -91,15 +91,13 @@
     </div>
 
 
-
-
-    <main class="p-4">
+    <main class="p-4 xl:px-14">
         <section class="max-w-7xl mx-auto">
             <div class="mb-0 md:mb-12">
                 <div class="flex flex-col gap-3 md:flex-row md:items-center justify-between">
                     <h1 class="text-3xl md:text-5xl font-bold">Schede tecniche</h1>
                     <div class="flex items-center gap-8 md:hidden">
-                        <p class="uppercase text-sm font-semibold cursor-pointer" id="filter-toggle">Filtra</p>
+                        <p class="uppercase text-sm font-semibold cursor-pointer" id="filter-toggle" onclick="toggleOverlay()">Filtra</p>
                         <div class="flex items-center bg-green-100 rounded-full px-4 py-2 shadow-md w-full max-w-md">
                             <input type="text" placeholder="Cerca un modello di device..." class="bg-transparent outline-none w-full text-black">
                             <i class="fa fa-search h-5 w-5 text-gray-500 cursor-pointer"></i>
@@ -113,158 +111,444 @@
             </div>
 
             <!-- Overlay for filter -->
-            <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center hidden transition-opacity duration-500 ease-in-out">
-                <div class="bg-white text-black p-6 rounded-lg shadow-lg w-11/12 max-w-md relative max-h-[90vh] overflow-y-auto">
-                    <button class="absolute top-2 text-4xl right-2 text-gray-600 hover:text-gray-900" id="overlay-close">&times;</button>
-                    <h2 class="text-xl font-semibold mb-4">Filtri</h2>
-                    <div class="space-y-4">
-                        <!-- Brand -->
-                        <div class="border-b py-4">
-                            <button class="flex justify-between w-full" id="brand-toggle">
-                                <span class="uppercase font-semibold text-lg">MARCA</span>
-                                <span class="chevron-down"><i class="fa fa-chevron-down"></i></span>
-                            </button>
-                            <div id="brand-content" class="mt-2 transition-all duration-500 hidden">
-                                <label class="block">
-                                    <input type="checkbox" class="mr-2">
-                                    Samsung
-                                </label>
-                                <label class="block">
-                                    <input type="checkbox" class="mr-2">
-                                    Huawei
-                                </label>
-                                <button class="text-blue-500 mt-2">VEDI ALTRI</button>
-                            </div>
-                        </div>
-                        <!-- Other filters (Vote, Display, Camera, etc.) go here similarly -->
+            <div id="filter-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+              <div class="bg-white h-full w-full p-6 overflow-y-auto relative">
+                  <button class="absolute top-4 right-4 text-2xl" onclick="toggleOverlay()">
+                      <i class="fas fa-times"></i>
+                  </button>
+                  <h1 class="uppercase font-semibold text-lg mb-5">Filtra</h1>
+      
+                  <!-- Filters for Small Screen Overlay -->
+                  <div class="border-b pb-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-brand')">
+                          <span class="uppercase font-semibold text-lg">MARCA</span>
+                          <span id="overlay-brand-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-brand-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Samsung
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Huawei
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Apple
+                          </label>
+                          <button class="text-blue-500 mt-2">VEDI ALTRI</button>
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-vote')">
+                          <span class="uppercase font-semibold text-lg">VOTO</span>
+                          <span id="overlay-vote-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-vote-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="radio" name="vote" class="mr-2" />
+                              4 stars & up
+                          </label>
+                          <label class="block">
+                              <input type="radio" name="vote" class="mr-2" />
+                              3 stars & up
+                          </label>
+                          <label class="block">
+                              <input type="radio" name="vote" class="mr-2" />
+                              2 stars & up
+                          </label>
+                          <input type="range" min="1" max="5" class="w-full mt-2" />
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-display')">
+                          <span class="uppercase font-semibold text-lg">DISPLAY</span>
+                          <span id="overlay-display-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-display-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Less than 5 inches
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              5 to 6 inches
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              More than 6 inches
+                          </label>
+                          <input type="range" min="1" max="18" class="w-full mt-2" />
+                          <span>1 - 18 POLLICI</span>
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-camera')">
+                          <span class="uppercase font-semibold text-lg">FOTOCAMERA</span>
+                          <span id="overlay-camera-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-camera-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              12 MP & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              8 MP & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              5 MP & up
+                          </label>
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-front-camera')">
+                          <span class="uppercase font-semibold text-lg">FOTOCAMERA FRONTALE</span>
+                          <span id="overlay-front-camera-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-front-camera-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              8 MP & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              5 MP & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              2 MP & up
+                          </label>
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-ram')">
+                          <span class="uppercase font-semibold text-lg">RAM</span>
+                          <span id="overlay-ram-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-ram-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              4 GB & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              6 GB & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              8 GB & up
+                          </label>
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-memory')">
+                          <span class="uppercase font-semibold text-lg">MEMORIA</span>
+                          <span id="overlay-memory-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-memory-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              64 GB & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              128 GB & up
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              256 GB & up
+                          </label>
+                      </div>
+                  </div>
+      
+                  <div class="border-b py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-os')">
+                          <span class="uppercase font-semibold text-lg">SISTEMA OPERATIVO</span>
+                          <span id="overlay-os-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-os-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Android
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              iOS
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Windows
+                          </label>
+                      </div>
+                  </div>
+      
+                  <div class="py-4">
+                      <button class="flex justify-between w-full" onclick="toggleSection('overlay-type')">
+                          <span class="uppercase font-semibold text-lg">TIPO</span>
+                          <span id="overlay-type-icon">
+                              <i class="fas fa-chevron-right"></i>
+                          </span>
+                      </button>
+                      <div id="overlay-type-content" class="mt-2 transition-all duration-500 hidden">
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Smartphone
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Basic phone
+                          </label>
+                          <label class="block">
+                              <input type="checkbox" class="mr-2" />
+                              Feature phone
+                          </label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-32 md:my-20">
+            <div class="md:col-span-1">
+              <div class="hidden md:block">
+                <h1 class="uppercase font-semibold text-lg mb-5">Filtra</h1>
+        
+                <div class="border-b pb-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('brand')">
+                        <span class="uppercase font-semibold text-lg">MARCA</span>
+                        <span id="brand-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div id="brand-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Samsung
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Huawei
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Apple
+                        </label>
+                        <button class="text-blue-500 mt-2">VEDI ALTRI</button>
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('vote')">
+                        <span class="uppercase font-semibold text-lg">VOTO</span>
+                        <span id="vote-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="vote-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="radio" name="vote" class="mr-2" />
+                            4 stars & up
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="vote" class="mr-2" />
+                            3 stars & up
+                        </label>
+                        <label class="block">
+                            <input type="radio" name="vote" class="mr-2" />
+                            2 stars & up
+                        </label>
+                        <input type="range" min="1" max="5" class="w-full mt-2" />
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('display')">
+                        <span class="uppercase font-semibold text-lg">DISPLAY</span>
+                        <span id="display-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="display-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Less than 5 inches
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            5 to 6 inches
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            More than 6 inches
+                        </label>
+                        <input type="range" min="1" max="18" class="w-full mt-2" />
+                        <span>1 - 18 POLLICI</span>
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('camera')">
+                        <span class="uppercase font-semibold text-lg">FOTOCAMERA</span>
+                        <span id="camera-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="camera-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            12 MP & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            8 MP & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            5 MP & up
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('front-camera')">
+                        <span class="uppercase font-semibold text-lg">FOTOCAMERA FRONTALE</span>
+                        <span id="front-camera-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="front-camera-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            8 MP & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            5 MP & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            2 MP & up
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('ram')">
+                        <span class="uppercase font-semibold text-lg">RAM</span>
+                        <span id="ram-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="ram-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            4 GB & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            6 GB & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            8 GB & up
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('memory')">
+                        <span class="uppercase font-semibold text-lg">MEMORIA</span>
+                        <span id="memory-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="memory-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            64 GB & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            128 GB & up
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            256 GB & up
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="border-b py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('os')">
+                        <span class="uppercase font-semibold text-lg">SISTEMA OPERATIVO</span>
+                        <span id="os-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="os-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Android
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            iOS
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Windows
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="py-4">
+                    <button class="flex justify-between w-full" onclick="toggleSection('type')">
+                        <span class="uppercase font-semibold text-lg">TIPO</span>
+                        <span id="type-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </button>
+                    <div id="type-content" class="mt-2 transition-all duration-500 hidden">
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Smartphone
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Basic phone
+                        </label>
+                        <label class="block">
+                            <input type="checkbox" class="mr-2" />
+                            Feature phone
+                        </label>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 my-20">
-            <div class="md:col-span-1">
-                <div class="hidden md:block">
-                    <h1 class="uppercase font-semibold text-lg mb-5">Filtri</h1>
-                    
-                    <div class="border-b pb-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('brand')">
-                        <span class="uppercase font-semibold text-lg">MARCA</span>
-                        <span id="brand-icon">
-                          <i class="fas fa-chevron-down"></i>
-                        </span>
-                      </button>
-                      <div id="brand-content" class="mt-2 transition-all duration-500 hidden">
-                        <label class="block">
-                          <input type="checkbox" class="mr-2" />
-                          Samsung
-                        </label>
-                        <label class="block">
-                          <input type="checkbox" class="mr-2" />
-                          Huawei
-                        </label>
-                        <button class="text-blue-500 mt-2">VEDI ALTRI</button>
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('vote')">
-                        <span class="uppercase font-semibold text-lg">VOTO</span>
-                        <span id="vote-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="vote-content" class="mt-2 transition-all duration-500 hidden">
-                        <span>MAGGIORE O UGUALE A 0</span>
-                        <input type="range" min="1" max="18" class="w-full" />
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('display')">
-                        <span class="uppercase font-semibold text-lg">DISPLAY</span>
-                        <span id="display-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="display-content" class="mt-2 transition-all duration-500 hidden">
-                        <input type="range" min="1" max="18" class="w-full" />
-                        <span>1 - 18 POLLICI</span>
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('camera')">
-                        <span class="uppercase font-semibold text-lg">FOTOCAMERA</span>
-                        <span id="camera-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="camera-content" class="mt-2 transition-all duration-500 hidden">
-                        <!-- Add specific filter options for Fotocamera -->
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('front-camera')">
-                        <span class="uppercase font-semibold text-lg">FOTOCAMERA FRONTALE</span>
-                        <span id="front-camera-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="front-camera-content" class="mt-2 transition-all duration-500 hidden">
-                        <!-- Add specific filter options for Fotocamera Frontale -->
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('ram')">
-                        <span class="uppercase font-semibold text-lg">RAM</span>
-                        <span id="ram-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="ram-content" class="mt-2 transition-all duration-500 hidden">
-                        <!-- Add specific filter options for RAM -->
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('memory')">
-                        <span class="uppercase font-semibold text-lg">MEMORIA</span>
-                        <span id="memory-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="memory-content" class="mt-2 transition-all duration-500 hidden">
-                        <!-- Add specific filter options for Memoria -->
-                      </div>
-                    </div>
-                  
-                    <div class="border-b py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('os')">
-                        <span class="uppercase font-semibold text-lg">SISTEMA OPERATIVO</span>
-                        <span id="os-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="os-content" class="mt-2 transition-all duration-500 hidden">
-                        <!-- Add specific filter options for Sistema Operativo -->
-                      </div>
-                    </div>
-                  
-                    <div class="py-4">
-                      <button class="flex justify-between w-full" onclick="toggleSection('type')">
-                        <span class="uppercase font-semibold text-lg">TIPO</span>
-                        <span id="type-icon">
-                          <i class="fas fa-chevron-right"></i>
-                        </span>
-                      </button>
-                      <div id="type-content" class="mt-2 transition-all duration-500 hidden">
-                        <!-- Add specific filter options for Tipo -->
-                      </div>
-                    </div>
-                  </div>
                   
             </div>
             <div class="md:col-span-3">
@@ -463,88 +747,22 @@
         </div>
       </footer>
 
-    <script>
-        const darkMode = false;
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('bg-gray-800');
-            document.body.classList.toggle('text-white');
-            document.body.classList.toggle('bg-white');
-            document.body.classList.toggle('text-gray-900');
+      <script>
+        // JavaScript function to toggle overlay visibility
+        function toggleOverlay() {
+            const overlay = document.getElementById('filter-overlay');
+            overlay.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden'); // Prevent page scroll
         }
 
-        function toggleNotifications() {
-            document.getElementById('notifications').classList.toggle('hidden');
-        }
-
-        function toggleSearch() {
-            const searchInput = document.getElementById('searchInput');
-            const clearSearch = document.getElementById('clearSearch');
-            searchInput.classList.toggle('hidden');
-            clearSearch.classList.toggle('hidden');
-        }
-
-        function clearSearch() {
-            const searchInput = document.getElementById('searchInput');
-            searchInput.value = '';
-            toggleSearch();
-        }
-
-        function showMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('hidden');
-            document.getElementById('mobileNavLinks').classList.add('flex');
-        }
-
-        function hideMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('flex');
-            document.getElementById('mobileNavLinks').classList.add('hidden');
-        }
-
-        // JavaScript for toggle functions
-        document.getElementById('filter-toggle').addEventListener('click', function() {
-            document.getElementById('overlay').classList.toggle('hidden');
-        });
-
-        document.getElementById('overlay-close').addEventListener('click', function() {
-            document.getElementById('overlay').classList.add('hidden');
-        });
-
-        document.getElementById('brand-toggle').addEventListener('click', function() {
-            document.getElementById('brand-content').classList.toggle('hidden');
-        });
-
+        // JavaScript function to toggle filter sections
         function toggleSection(section) {
-    const content = document.getElementById(`${section}-content`);
-    const icon = document.getElementById(`${section}-icon`).querySelector('i');
-    if (content.classList.contains('hidden')) {
-      content.classList.remove('hidden');
-      icon.classList.remove('fa-chevron-right');
-      icon.classList.add('fa-chevron-down');
-    } else {
-      content.classList.add('hidden');
-      icon.classList.remove('fa-chevron-down');
-      icon.classList.add('fa-chevron-right');
-    }
-  }
-
-  document.getElementById('overlay-close').addEventListener('click', () => {
-  document.getElementById('overlay').classList.add('hidden');
-});
-
-function toggleOverlay() {
-  const overlay = document.getElementById('overlay');
-  overlay.classList.toggle('hidden');
-}
-
-function toggleSection(section) {
-  const content = document.getElementById(`${section}-content`);
-  const chevron = document.getElementById(`${section}-chevron`);
-  const isOpen = !content.classList.contains('hidden');
-
-  content.classList.toggle('hidden', isOpen);
-  chevron.innerHTML = isOpen ? '<i class="fa fa-chevron-right"></i>' : '<i class="fa fa-chevron-down"></i>';
-}
-
-    </script>
+            const content = document.getElementById(`${section}-content`);
+            const icon = document.getElementById(`${section}-icon`);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-right');
+            icon.classList.toggle('fa-chevron-down');
+        }
+      </script>
 </body>
 </html>

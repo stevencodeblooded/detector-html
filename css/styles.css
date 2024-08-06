@@ -30,6 +30,27 @@ body {
   /* Other existing styles... */
 }
 
+/* Add these styles to your global CSS file */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+body.dark-mode .button {
+  background-color: #333;
+  color: #fff;
+}
+
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.

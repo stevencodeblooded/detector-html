@@ -1,200 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <!-- Tailwind CSS CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Device Comparison</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-
-</head>
-<body>
-    <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
-        <h2 class="text-3xl md:text-5xl font-bold text-green-700">
-          Offerte in evidenza
-        </h2>
-        <div class="flex items-center self-end">
-          <p class="text-green-700 font-bold mr-4 uppercase text-xl">
-            Tutte le Offerte
-          </p>
-          <button
-            onclick="prev()"
-            class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md"
-          >
-            <!-- Chevron Left Icon -->
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-          <button
-            onclick="next()"
-            class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md"
-          >
-            <!-- Chevron Right Icon -->
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .vs-line::before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: hsl(125, 50%, 59%);
+        position: absolute;
+        left: 50%;
+        top: 0%;
+        margin-block: 20px;
+      }
+      .vs-text {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        padding: 0 5px;
+      }
+    </style>
+  </head>
+  <body class=" flex items-center justify-center min-h-screen">
+    <div
+      class="relative w-4/5 max-w-7xl border-4 border-green-300 hover:border-green-400 transition-all rounded-lg p-6 grid grid-cols-2 gap-4"
+    >
+      <div class="flex flex-col items-center">
+        <div class="flex gap-">
+            <h2 class="hidden sm:block text-2xl lg:text-3xl font-bold mb-2 text-gray-800">Nokta Makro FindX</h2>
+            <img
+              src="./assets/metal_3.png"
+              alt="Device 1"
+              class="w-44 h-44 object-contain mb-4"
+            />
+        </div>
+        <div class="w-full space-y-12">
+            <div class="space-y-4 w-full">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 w-full">
+                <h2 class="uppercase text-2xl font-bold">Tipo Di Connessioni</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 w-full">
+                <h2 class="uppercase text-2xl font-bold">Altre Informazioni</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4 w-full">
+                <h2 class="uppercase text-2xl font-bold">Lorem Ipsum</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
-      
-      <div class="pt-12">
-        <div class="flex overflow-x-scroll">
-          <div class="px-2" style="width: calc(100vw - 180px);">
-            <div class="bg-white rounded-xl cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
-              <img
-                src="https://via.placeholder.com/300x400?text=Image+1"
-                alt="Placeholder 1"
-                class="w-full h-64 object-cover"
-              />
-              <div class="flex flex-col items-center gap-3 p-4">
-                <h3 class="font-bold text-3xl mb-2">Nokta FindX</h3>
-                <p class="text-3xl font-extralight">
-                  <!-- Euro Sign Icon -->
-                  <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h3.5a5.5 5.5 0 0 0 5.5-5.5v-1h-5v1a1 1 0 0 1-1 1H8v-1a1 1 0 0 1 1-1h4v-1H9a5.5 5.5 0 0 0-5.5 5.5v1H3v1h3.5v1a5.5 5.5 0 0 0 5.5 5.5H9v1h1.5v-1h4v1H17a5.5 5.5 0 0 0 5.5-5.5v-1H22v-1h-3.5v-1a5.5 5.5 0 0 0-5.5-5.5H17v-1h-1.5v1h-4v1H9z"></path>
-                  </svg>
-                  179,90
-                </p>
-                <div class="p-3 w-full">
-                  <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
-                    <h3 class="font-semibold">Offerta su</h3>
-                    <div class="flex items-center gap-3">
-                      <img src="https://via.placeholder.com/64x64?text=Amazon" alt="Amazon" class="w-16" />
-                      <!-- Chevron Right Icon -->
-                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
+      <div class="flex flex-col items-center">
+        <div class="flex">
+            <h2 class="hidden order-2 sm:block text-2xl lg:text-3xl font-bold mb-2 text-gray-800">Nokta The Legend</h2>
+            <img
+              src="./assets/metal_1.png"
+              alt="Device 1"
+              class="w-44 h-44 order-1 object-contain mb-4"
+            />
+        </div>
+        <div class="w-full space-y-12">
+            <div class="space-y-4 w-full">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        <div class="flex overflow-x-scroll">
-          <div class="px-2" style="width: calc(100vw - 180px);">
-            <div class="bg-white rounded-xl cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
-              <img
-                src="https://via.placeholder.com/300x400?text=Image+1"
-                alt="Placeholder 1"
-                class="w-full h-64 object-cover"
-              />
-              <div class="flex flex-col items-center gap-3 p-4">
-                <h3 class="font-bold text-3xl mb-2">Nokta FindX</h3>
-                <p class="text-3xl font-extralight">
-                  <!-- Euro Sign Icon -->
-                  <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h3.5a5.5 5.5 0 0 0 5.5-5.5v-1h-5v1a1 1 0 0 1-1 1H8v-1a1 1 0 0 1 1-1h4v-1H9a5.5 5.5 0 0 0-5.5 5.5v1H3v1h3.5v1a5.5 5.5 0 0 0 5.5 5.5H9v1h1.5v-1h4v1H17a5.5 5.5 0 0 0 5.5-5.5v-1H22v-1h-3.5v-1a5.5 5.5 0 0 0-5.5-5.5H17v-1h-1.5v1h-4v1H9z"></path>
-                  </svg>
-                  179,90
-                </p>
-                <div class="p-3 w-full">
-                  <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
-                    <h3 class="font-semibold">Offerta su</h3>
-                    <div class="flex items-center gap-3">
-                      <img src="https://via.placeholder.com/64x64?text=Amazon" alt="Amazon" class="w-16" />
-                      <!-- Chevron Right Icon -->
-                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
+            <div class="space-y-4 w-full">
+                <h2 class="uppercase text-2xl font-bold">Tipo Di Connessioni</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        <div class="flex overflow-x-scroll">
-          <div class="px-2" style="width: calc(100vw - 180px);">
-            <div class="bg-white rounded-xl cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
-              <img
-                src="https://via.placeholder.com/300x400?text=Image+1"
-                alt="Placeholder 1"
-                class="w-full h-64 object-cover"
-              />
-              <div class="flex flex-col items-center gap-3 p-4">
-                <h3 class="font-bold text-3xl mb-2">Nokta FindX</h3>
-                <p class="text-3xl font-extralight">
-                  <!-- Euro Sign Icon -->
-                  <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h3.5a5.5 5.5 0 0 0 5.5-5.5v-1h-5v1a1 1 0 0 1-1 1H8v-1a1 1 0 0 1 1-1h4v-1H9a5.5 5.5 0 0 0-5.5 5.5v1H3v1h3.5v1a5.5 5.5 0 0 0 5.5 5.5H9v1h1.5v-1h4v1H17a5.5 5.5 0 0 0 5.5-5.5v-1H22v-1h-3.5v-1a5.5 5.5 0 0 0-5.5-5.5H17v-1h-1.5v1h-4v1H9z"></path>
-                  </svg>
-                  179,90
-                </p>
-                <div class="p-3 w-full">
-                  <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
-                    <h3 class="font-semibold">Offerta su</h3>
-                    <div class="flex items-center gap-3">
-                      <img src="https://via.placeholder.com/64x64?text=Amazon" alt="Amazon" class="w-16" />
-                      <!-- Chevron Right Icon -->
-                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
+            <div class="space-y-4 w-full">
+                <h2 class="uppercase text-2xl font-bold">Altre Informazioni</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        <div class="flex overflow-x-scroll">
-          <div class="px-2" style="width: calc(100vw - 180px);">
-            <div class="bg-white rounded-xl cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
-              <img
-                src="https://via.placeholder.com/300x400?text=Image+1"
-                alt="Placeholder 1"
-                class="w-full h-64 object-cover"
-              />
-              <div class="flex flex-col items-center gap-3 p-4">
-                <h3 class="font-bold text-3xl mb-2">Nokta FindX</h3>
-                <p class="text-3xl font-extralight">
-                  <!-- Euro Sign Icon -->
-                  <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h3.5a5.5 5.5 0 0 0 5.5-5.5v-1h-5v1a1 1 0 0 1-1 1H8v-1a1 1 0 0 1 1-1h4v-1H9a5.5 5.5 0 0 0-5.5 5.5v1H3v1h3.5v1a5.5 5.5 0 0 0 5.5 5.5H9v1h1.5v-1h4v1H17a5.5 5.5 0 0 0 5.5-5.5v-1H22v-1h-3.5v-1a5.5 5.5 0 0 0-5.5-5.5H17v-1h-1.5v1h-4v1H9z"></path>
-                  </svg>
-                  179,90
-                </p>
-                <div class="p-3 w-full">
-                  <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
-                    <h3 class="font-semibold">Offerta su</h3>
-                    <div class="flex items-center gap-3">
-                      <img src="https://via.placeholder.com/64x64?text=Amazon" alt="Amazon" class="w-16" />
-                      <!-- Chevron Right Icon -->
-                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
+            <div class="space-y-4 w-full">
+                <h2 class="uppercase text-2xl font-bold">Lorem Ipsum</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <!-- Repeat the above div block as needed for more items -->
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full"
+                >
+                  <i class="fa-regular fa-eye text-xl"></i>
+                  <div>
+                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                    <p class="uppercase text-xs">Disponibile</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Repeat similar block for other items -->
         </div>
       </div>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.getElementById('slider');
-  const prevButton = document.getElementById('prev');
-  const nextButton = document.getElementById('next');
-
-  const scrollAmount = 300; // Adjust as needed
-
-  nextButton.addEventListener('click', () => {
-    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
-
-  prevButton.addEventListener('click', () => {
-    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-});
-
-      </script>
-      
-</body>
+      </div>
+      <div class="vs-line absolute inset-0"></div>
+      <div class="vs-text text-lg font-bold">VS</div>
+    </div>
+  </body>
 </html>

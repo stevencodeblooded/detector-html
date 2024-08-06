@@ -103,7 +103,7 @@
               onclick="toggleNotifications()"
             ></i>
             <div
-              class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border border-red-500"
+              class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"
             ></div>
             <div
               id="notifications"
@@ -250,33 +250,14 @@
             <!-- Header Content -->
             <div>
               <h1 class="text-3xl md:text-5xl font-bold mb-3">Nokta FIndX</h1>
-              <p class="text-lg font-semibold text-gray-400">Scheda Tecnica</p>
+              <p class="text-lg lg:text-2xl font-semibold text-gray-400">Scheda Tecnica</p>
             </div>
 
             <!-- Search Input -->
-            <div
-              class="hidden md:flex items-center bg-green-100 rounded-full px-4 py-2 shadow-md w-full max-w-md"
-            >
-              <input
-                type="text"
-                placeholder="Cerca un modello di device..."
-                class="bg-transparent outline-none w-full"
-              />
-              <svg
-                class="h-5 w-5 text-gray-500 cursor-pointer"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M11 4a7 7 0 110 14 7 7 0 010-14zm6.293 10.293a1 1 0 00-1.414-1.414A5.978 5.978 0 0018 11a6 6 0 00-6-6 5.978 5.978 0 00-3.879 1.07 1 1 0 00-1.414 1.414A7.978 7.978 0 014 11a8 8 0 1114.293 3.293z"
-                ></path>
-              </svg>
-            </div>
+            <div class="flex items-center bg-green-100 rounded-full px-4 py-2 shadow-md w-full max-w-md">
+              <input type="text" placeholder="Cerca un modello di device..." class="bg-transparent outline-none w-full text-black">
+              <i class="fa fa-search h-5 w-5 text-gray-500 cursor-pointer"></i>
+          </div>
           </div>
         </div>
 
@@ -287,13 +268,13 @@
             <!-- Main Content and Sidebar Layout -->
             <div class="flex flex-col gap-6 md:flex-row">
               <!-- Main Content -->
-              <div class="w-full md:w-1/2 lg:w-2/3">
+              <div class="w-full md:w-1/2 lg:w-2/3 ">
                 <div>
-                  <div class="flex flex-col gap-12">
+                  <div class="flex flex-col gap-6">
                     <!-- Product Price Card -->
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       <div
-                        class="flex items-center justify-center md:flex-col py-6 px-3 md:pb-10 rounded-xl shadow-lg border-4 border-green-300 h-fit hover:border-green-400 transition-all"
+                        class="flex md:flex-col py-6 px-3 md:pb-10 rounded-xl shadow-lg border-4 border-green-300 hover:border-green-400 transition-all"
                       >
                         <img
                           src="./assets/metal_3.png"
@@ -306,40 +287,14 @@
                           </h3>
                           <p class="text-2xl font-bold text-red-600">
                             179,90
-                            <svg
-                              class="h-5 w-5 text-gray-500 inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M11 4a7 7 0 110 14 7 7 0 010-14zm6.293 10.293a1 1 0 00-1.414-1.414A5.978 5.978 0 0018 11a6 6 0 00-6-6 5.978 5.978 0 00-3.879 1.07 1 1 0 00-1.414 1.414A7.978 7.978 0 014 11a8 8 0 1114.293 3.293z"
-                              ></path>
-                            </svg>
+                            <i class="fa-solid fa-euro-sign"></i>
                           </p>
                           <div class="w-full">
                             <div
-                              class="flex cursor-pointer items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full"
+                              class="flex cursor-pointer items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl"
                             >
                               <h3 class="font-semibold">Scopri l'offerta</h3>
-                              <svg
-                                class="h-5 w-5 text-gray-500 inline"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M13 7l5 5-5 5M6 12h12"
-                                ></path>
-                              </svg>
+                              <i class="fa-solid fa-chevron-right"></i>
                             </div>
                           </div>
                           <p class="text-sm text-gray-500 mt-2">da Amazon</p>
@@ -348,28 +303,15 @@
 
                       <!-- Product Specifications -->
                       <div class="lg:col-span-2">
-                        <div class="grid grid-cols-3 gap-2 md:gap-5 mb-12">
+                        <div class="grid grid-cols-3 gap-2 md:gap-3 mb-12">
                           <!-- Example Specification Card -->
                           <div
-                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-green-100 px-3 py-1 rounded-md"
                           >
-                            <svg
-                              class="text-base md:text-xl inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 10l4.5-4.5M19.5 10H14V4.5M10 15l-4.5 4.5M5.5 15H11V19.5"
-                              ></path>
-                            </svg>
+                          <i class="fa-regular fa-eye text-3xl"></i>
                             <div>
                               <h3
-                                class="text-sm md:text-lg uppercase font-semibold"
+                                class="text-sm md:text-lg uppercase font-bold"
                               >
                                 LCD
                               </h3>
@@ -377,25 +319,25 @@
                             </div>
                           </div>
                           <div
-                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-green-100 px-3 py-1 rounded-md"
                           >
-                            <svg
-                              class="text-base md:text-xl inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 10l4.5-4.5M19.5 10H14V4.5M10 15l-4.5 4.5M5.5 15H11V19.5"
-                              ></path>
-                            </svg>
+                          <i class="fa-regular fa-eye text-3xl"></i>
                             <div>
                               <h3
-                                class="text-sm md:text-lg uppercase font-semibold"
+                                class="text-sm md:text-lg uppercase font-bold"
+                              >
+                                Piastra
+                              </h3>
+                              <p class="uppercase text-xs">3x5" * 5x7</p>
+                            </div>
+                          </div>
+                          <div
+                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-green-100 px-3 py-1 rounded-md"
+                          >
+                          <i class="fa-regular fa-eye text-3xl"></i>
+                            <div>
+                              <h3
+                                class="text-sm md:text-lg uppercase font-bold"
                               >
                                 LCD
                               </h3>
@@ -403,25 +345,25 @@
                             </div>
                           </div>
                           <div
-                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-green-100 px-3 py-1 rounded-md"
                           >
-                            <svg
-                              class="text-base md:text-xl inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 10l4.5-4.5M19.5 10H14V4.5M10 15l-4.5 4.5M5.5 15H11V19.5"
-                              ></path>
-                            </svg>
+                          <i class="fa-regular fa-eye text-3xl"></i>
                             <div>
                               <h3
-                                class="text-sm md:text-lg uppercase font-semibold"
+                                class="text-sm md:text-lg uppercase font-bold"
+                              >
+                                Piastra
+                              </h3>
+                              <p class="uppercase text-xs">Disponsible</p>
+                            </div>
+                          </div>
+                          <div
+                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-green-100 px-3 py-1 rounded-md"
+                          >
+                          <i class="fa-regular fa-eye text-3xl"></i>
+                            <div>
+                              <h3
+                                class="text-sm md:text-lg uppercase font-bold"
                               >
                                 LCD
                               </h3>
@@ -429,175 +371,157 @@
                             </div>
                           </div>
                           <div
-                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-green-100 px-3 py-1 rounded-md"
                           >
-                            <svg
-                              class="text-base md:text-xl inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 10l4.5-4.5M19.5 10H14V4.5M10 15l-4.5 4.5M5.5 15H11V19.5"
-                              ></path>
-                            </svg>
+                          <i class="fa-regular fa-eye text-3xl"></i>
                             <div>
                               <h3
-                                class="text-sm md:text-lg uppercase font-semibold"
+                                class="text-sm md:text-lg uppercase font-bold"
                               >
                                 LCD
                               </h3>
                               <p class="uppercase text-xs">Disponsible</p>
                             </div>
                           </div>
-                          <div
-                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
-                          >
-                            <svg
-                              class="text-base md:text-xl inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 10l4.5-4.5M19.5 10H14V4.5M10 15l-4.5 4.5M5.5 15H11V19.5"
-                              ></path>
-                            </svg>
-                            <div>
-                              <h3
-                                class="text-sm md:text-lg uppercase font-semibold"
-                              >
-                                LCD
-                              </h3>
-                              <p class="uppercase text-xs">Disponsible</p>
-                            </div>
-                          </div>
-                          <div
-                            class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
-                          >
-                            <svg
-                              class="text-base md:text-xl inline"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M15 10l4.5-4.5M19.5 10H14V4.5M10 15l-4.5 4.5M5.5 15H11V19.5"
-                              ></path>
-                            </svg>
-                            <div>
-                              <h3
-                                class="text-sm md:text-lg uppercase font-semibold"
-                              >
-                                LCD
-                              </h3>
-                              <p class="uppercase text-xs">Disponsible</p>
-                            </div>
-                          </div>
+
                           <!-- Repeat similar specification cards as needed -->
                         </div>
 
                         <!-- Description Paragraphs -->
                         <div class="space-y-3">
                           <p class="text-sm sm:text-base md:text-lg">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Esse ratione inventore optio commodi similique
-                            consequatur labore necessitatibus, maxime porro
-                            delectus iusto. Odit explicabo numquam iste unde sed
-                            enim eos non, quis est nostrum consectetur quam
-                            sapiente, voluptatibus, magni ducimus reiciendis?
+                            Si avvicina l’estate e stai pensando di acquistare un
+                            metal detector per le tue vacanze? La spiaggia è uno
+                            dei luoghi più affascinanti per praticare il metal
+                            detecting. Tuttavia, la scelta del metal detector giusto
+                            può fare la differenza tra un’avventura emozionante e
+                            una frustrante battaglia contro le interferenze dei
+                            minerali presenti nella sabbia e nell’acqua salata. In
+                            questo articolo ti indicheremo quale potrebbe essere il
+                            miglior metal detector da spiaggia per te.
                           </p>
                           <p class="text-sm sm:text-base md:text-lg">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Esse ratione inventore optio commodi similique
-                            consequatur labore necessitatibus, maxime porro
-                            delectus iusto. Odit explicabo numquam iste unde sed
-                            enim eos non, quis est nostrum consectetur quam
-                            sapiente, voluptatibus, magni ducimus reiciendis?
+                            Si avvicina l’estate e stai pensando di acquistare un
+                            metal detector per le tue vacanze? La spiaggia è uno
+                            dei luoghi più affascinanti per praticare il metal
+                            detecting. Tuttavia, la scelta del metal detector giusto
+                            può fare la differenza tra un’avventura emozionante e
+                            una frustrante battaglia contro le interferenze dei
+                            minerali presenti nella sabbia e nell’acqua salata. In
+                            questo articolo ti indicheremo quale potrebbe essere il
+                            miglior metal detector da spiaggia per te.
                           </p>
                           <p class="text-sm sm:text-base md:text-lg">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Esse ratione inventore optio commodi similique
-                            consequatur labore necessitatibus, maxime porro
-                            delectus iusto. Odit explicabo numquam iste unde sed
-                            enim eos non, quis est nostrum consectetur quam
-                            sapiente, voluptatibus, magni ducimus reiciendis?
+                            Si avvicina l’estate e stai pensando di acquistare un
+                            metal detector per le tue vacanze? La spiaggia è uno
+                            dei luoghi più affascinanti per praticare il metal
+                            detecting. Tuttavia, la scelta del metal detector giusto
+                            può fare la differenza tra un’avventura emozionante e
+                            una frustrante battaglia contro le interferenze dei
+                            minerali presenti nella sabbia e nell’acqua salata. In
+                            questo articolo ti indicheremo quale potrebbe essere il
+                            miglior metal detector da spiaggia per te.
                           </p>
-                          <!-- Repeat similar description paragraphs as needed -->
+                          <p class="text-sm sm:text-base md:text-lg">
+                            Si avvicina l’estate e stai pensando di acquistare un
+                            metal detector per le tue vacanze? La spiaggia è uno
+                            dei luoghi più affascinanti per praticare il metal
+                            detecting. Tuttavia, la scelta del metal detector giusto
+                            può fare la differenza tra un’avventura emozionante e
+                            una frustrante battaglia contro le interferenze dei
+                            minerali presenti nella sabbia e nell’acqua salata. In
+                            questo articolo ti indicheremo quale potrebbe essere il
+                            miglior metal detector da spiaggia per te.
+                          </p>
                         </div>
 
-                        <!-- Rating Section -->
-                        <div class="w-full my-12">
-                          <!-- Rating Section -->
-                          <div class="flex flex-col sm:flex-row gap-6">
-                            <!-- Green Rating Bars -->
-                            <div class="flex-1">
-                              <!-- Repeat this block for each green rating bar -->
-                              <div>
-                                <div class="flex items-center gap-2 mb-2">
-                                  <div
-                                    class="w-full bg-green-200 h-4 rounded-lg relative"
-                                  >
-                                    <div
-                                      class="absolute top-0 left-0 bg-green-400 h-full rounded-lg"
-                                      style="width: 80%"
-                                    ></div>
-                                  </div>
-                                  <span class="text-sm font-medium"
-                                    >Facilità di utilizzo</span
-                                  >
-                                </div>
-                                <!-- Add more RatingBar components here as needed -->
+                        
+                        <!-- Rating Bars -->
+                        <div class="flex flex-col sm:flex-row gap-6 my-16">
+                          <!-- Green bars -->
+                          <div class="flex-1">
+                            <div class="flex flex-col mb-2 w-full gap-5 font-semibold">
+                              <div class="flex items-center justify-between">
+                                <span>Facilità di utilizzo</span>
+                                <span class="ml-2">8</span>
                               </div>
-                              <!-- End of green rating bars -->
+                              <div class="flex items-center">
+                                <div class="relative w-full h-2 rounded-full bg-gray-300">
+                                  <div class="absolute h-full rounded-full" style="width: 80%; background-color: #8aff90;"></div>
+                                </div>
+                              </div>
                             </div>
-
-                            <!-- Red Rating Bars -->
-                            <div class="flex-1">
-                              <!-- Repeat this block for each red rating bar -->
-                              <div>
-                                <div class="flex items-center gap-2 mb-2">
-                                  <div
-                                    class="w-full bg-red-200 h-4 rounded-lg relative"
-                                  >
-                                    <div
-                                      class="absolute top-0 left-0 bg-red-400 h-full rounded-lg"
-                                      style="width: 80%"
-                                    ></div>
-                                  </div>
-                                  <span class="text-sm font-medium"
-                                    >Comodità</span
-                                  >
-                                </div>
-                                <!-- Add more RatingBar components here as needed -->
+                            <div class="flex flex-col mb-2 w-full gap-5 font-semibold">
+                              <div class="flex items-center justify-between">
+                                <span>Facilità di utilizzo</span>
+                                <span class="ml-2">8</span>
                               </div>
-                              <!-- End of red rating bars -->
+                              <div class="flex items-center">
+                                <div class="relative w-full h-2 rounded-full bg-gray-300">
+                                  <div class="absolute h-full rounded-full" style="width: 80%; background-color: #8aff90;"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex flex-col mb-2 w-full gap-5 font-semibold">
+                              <div class="flex items-center justify-between">
+                                <span>Facilità di utilizzo</span>
+                                <span class="ml-2">8</span>
+                              </div>
+                              <div class="flex items-center">
+                                <div class="relative w-full h-2 rounded-full bg-gray-300">
+                                  <div class="absolute h-full rounded-full" style="width: 80%; background-color: #8aff90;"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Red bars -->
+                          <div class="flex-1">
+                            <div class="flex flex-col mb-2 w-full gap-5 font-semibold">
+                              <div class="flex items-center justify-between">
+                                <span>Comodità</span>
+                                <span class="ml-2">8</span>
+                              </div>
+                              <div class="flex items-center">
+                                <div class="relative w-full h-2 rounded-full bg-gray-300">
+                                  <div class="absolute h-full rounded-full" style="width: 80%; background-color: #f44336;"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex flex-col mb-2 w-full gap-5 font-semibold">
+                              <div class="flex items-center justify-between">
+                                <span>Comodità</span>
+                                <span class="ml-2">8</span>
+                              </div>
+                              <div class="flex items-center">
+                                <div class="relative w-full h-2 rounded-full bg-gray-300">
+                                  <div class="absolute h-full rounded-full" style="width: 80%; background-color: #f44336;"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex flex-col mb-2 w-full gap-5 font-semibold">
+                              <div class="flex items-center justify-between">
+                                <span>Comodità</span>
+                                <span class="ml-2">8</span>
+                              </div>
+                              <div class="flex items-center">
+                                <div class="relative w-full h-2 rounded-full bg-gray-300">
+                                  <div class="absolute h-full rounded-full" style="width: 80%; background-color: #f44336;"></div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
 
                         <!-- Specifiche component -->
-                        <!-- Specifiche -->
                         <div>
                           <section>
                             <!-- Section Header -->
-                            <h2 class="text-2xl md:text-4xl mb-3 font-bold">
+                            <h2 class="text-2xl md:text-4xl lg:text-5xl mb-7 font-bold">
                               Specifiche techniche
                             </h2>
                             <h2
-                              class="uppercase text-2xl mb-5 md:text-xl font-semibold"
+                              class="uppercase text-2xl mb-12 md:text-xl lg:text-3xl font-semibold"
                             >
                               Nokta Makro Findx
                             </h2>
@@ -608,7 +532,43 @@
                               <div
                                 class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
                               >
-                                <i class="fas fa-eye text-xl"></i>
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <!-- FontAwesome Eye Icon -->
+                                <div>
+                                  <h3 class="text-lg uppercase font-semibold">
+                                    LCD
+                                  </h3>
+                                  <p class="uppercase text-xs">Disponsible</p>
+                                </div>
+                              </div>
+                              <div
+                                class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                              >
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <!-- FontAwesome Eye Icon -->
+                                <div>
+                                  <h3 class="text-lg uppercase font-semibold">
+                                    LCD
+                                  </h3>
+                                  <p class="uppercase text-xs">Disponsible</p>
+                                </div>
+                              </div>
+                              <div
+                                class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                              >
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <!-- FontAwesome Eye Icon -->
+                                <div>
+                                  <h3 class="text-lg uppercase font-semibold">
+                                    LCD
+                                  </h3>
+                                  <p class="uppercase text-xs">Disponsible</p>
+                                </div>
+                              </div>
+                              <div
+                                class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                              >
+                                <i class="fa-regular fa-eye text-xl"></i>
                                 <!-- FontAwesome Eye Icon -->
                                 <div>
                                   <h3 class="text-lg uppercase font-semibold">
@@ -623,7 +583,7 @@
                             <!-- Tipo Di Connessioni -->
                             <div>
                               <h2
-                                class="uppercase text-2xl mb-5 md:text-xl font-semibold"
+                                class="uppercase text-2xl lg:text-3xl mb-5 lg:mb-8 md:text-xl font-semibold"
                               >
                                 Tipo Di Connessioni
                               </h2>
@@ -631,7 +591,43 @@
                                 <div
                                   class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
                                 >
-                                  <i class="fas fa-eye text-xl"></i>
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
                                   <!-- FontAwesome Eye Icon -->
                                   <div>
                                     <h3 class="text-lg uppercase font-semibold">
@@ -647,7 +643,7 @@
                             <!-- Altre Informazioni -->
                             <div>
                               <h2
-                                class="uppercase text-2xl mb-5 md:text-xl font-semibold"
+                               class="uppercase text-2xl lg:text-3xl mb-5 lg:mb-8 md:text-xl font-semibold"
                               >
                                 Altre Informazioni
                               </h2>
@@ -655,7 +651,43 @@
                                 <div
                                   class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
                                 >
-                                  <i class="fas fa-eye text-xl"></i>
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
                                   <!-- FontAwesome Eye Icon -->
                                   <div>
                                     <h3 class="text-lg uppercase font-semibold">
@@ -671,7 +703,7 @@
                             <!-- Lorem Ipsum -->
                             <div>
                               <h2
-                                class="uppercase text-2xl mb-5 md:text-xl font-semibold"
+                               class="uppercase text-2xl lg:text-3xl mb-5 lg:mb-8 md:text-xl font-semibold"
                               >
                                 Lorem Ipsum
                               </h2>
@@ -679,7 +711,43 @@
                                 <div
                                   class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
                                 >
-                                  <i class="fas fa-eye text-xl"></i>
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
+                                  <!-- FontAwesome Eye Icon -->
+                                  <div>
+                                    <h3 class="text-lg uppercase font-semibold">
+                                      LCD
+                                    </h3>
+                                    <p class="uppercase text-xs">Disponsible</p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex items-center gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md"
+                                >
+                                  <i class="fa-regular fa-eye text-xl"></i>
                                   <!-- FontAwesome Eye Icon -->
                                   <div>
                                     <h3 class="text-lg uppercase font-semibold">
@@ -695,78 +763,65 @@
                         </div>
 
                         <!-- Related Articles -->
-                        <div class="flex flex-col gap-5 my-12">
-                          <a href="#">
-                            <div
-                              class="flex items-center gap-4 cursor-pointer hover:opacity-70"
-                            >
-                              <img
-                                src="./assets/img_article_1.png"
-                                alt=""
-                                class="rounded-md w-28 h-28 object-cover"
-                              />
-                              <div class="flex flex-col gap-1">
-                                <p class="text-xs">Emilio G</p>
-                                <p class="font-bold leading-5 hover:underline">
-                                  Lorem ipsum dolor sit, amet consectetur
-                                  adipisicing elit. Quam, praesentium.
-                                </p>
-                                <p
-                                  class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight"
-                                >
-                                  Curiosta
-                                </p>
-                              </div>
+
+                        <div class="pt-20 pb-24">
+                          <h2 class="text-2xl md:text-4xl lg:text-5xl mb-7 font-bold">
+                            Articoli su Nokta FindX...
+                          </h2>
+
+                          <div class="flex flex-col gap-8 max-w-7xl mx-auto">
+                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                <img src="./assets/img_article_1.png" alt="" class="rounded-2xl w-24 lg:w-36 h-24 lg:h-36 object-cover">
+                                <div class="space-y-0">
+                                    <p class="text-xs">Emilio G</p>
+                                    <p class="text-lg md:text-2xl font-bold">
+                                        La maschera d'oro di Teres, simbolo odierno della Golden Mask
+                                    </p>
+                                    <p class="bg-green-300 px-4 w-fit text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                        Curiosita
+                                    </p>
+                                </div>
                             </div>
-                          </a>
-                          <a href="#">
-                            <div
-                              class="flex items-center gap-4 cursor-pointer hover:opacity-70"
-                            >
-                              <img
-                                src="./assets/img_article_1.png"
-                                alt=""
-                                class="rounded-md w-28 h-28 object-cover"
-                              />
-                              <div class="flex flex-col gap-1">
-                                <p class="text-xs">Emilio G</p>
-                                <p class="font-bold leading-5 hover:underline">
-                                  Lorem ipsum dolor sit, amet consectetur
-                                  adipisicing elit. Quam, praesentium.
-                                </p>
-                                <p
-                                  class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight"
-                                >
-                                  Curiosta
-                                </p>
-                              </div>
+                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                <img src="./assets/img_article_2.jpg" alt="" class="rounded-2xl w-24 lg:w-36 h-24 lg:h-36 object-cover">
+                                <div class="space-y-0">
+                                    <p class="text-xs">Emilio G</p>
+                                    <p class="text-lg md:text-2xl font-bold">
+                                        La maschera d'oro di Teres, simbolo odierno della Golden Mask
+                                    </p>
+                                    <p class="bg-green-300 px-4 w-fit text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                        Curiosita
+                                    </p>
+                                </div>
                             </div>
-                          </a>
-                          <a href="#">
-                            <div
-                              class="flex items-center gap-4 cursor-pointer hover:opacity-70"
-                            >
-                              <img
-                                src="./assets/img_article_1.png"
-                                alt=""
-                                class="rounded-md w-28 h-28 object-cover"
-                              />
-                              <div class="flex flex-col gap-1">
-                                <p class="text-xs">Emilio G</p>
-                                <p class="font-bold leading-5 hover:underline">
-                                  Lorem ipsum dolor sit, amet consectetur
-                                  adipisicing elit. Quam, praesentium.
-                                </p>
-                                <p
-                                  class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight"
-                                >
-                                  Curiosta
-                                </p>
-                              </div>
+                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                <img src="./assets/img_article_1.png" alt="" class="rounded-2xl w-24 lg:w-36 h-24 lg:h-36 object-cover">
+                                <div class="space-y-0">
+                                    <p class="text-xs">Emilio G</p>
+                                    <p class="text-lg md:text-2xl font-bold">
+                                        La maschera d'oro di Teres, simbolo odierno della Golden Mask
+                                    </p>
+                                    <p class="bg-green-300 px-4 w-fit text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                        Curiosita
+                                    </p>
+                                </div>
                             </div>
-                          </a>
-                          <!-- Repeat similar article blocks as needed -->
+                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                <img src="./assets/img_article_2.jpg" alt="" class="rounded-2xl w-24 lg:w-36 h-24 lg:h-36 object-cover">
+                                <div class="space-y-0">
+                                    <p class="text-xs">Emilio G</p>
+                                    <p class="text-lg md:text-2xl font-bold">
+                                        La maschera d'oro di Teres, simbolo odierno della Golden Mask
+                                    </p>
+                                    <p class="bg-green-300 px-4 w-fit text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                        Curiosita
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+
+                          
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -774,7 +829,7 @@
               </div>
 
               <!-- StickyRightSide component (commented out for now) -->
-              <div class="relative w-full md:w-1/2 lg:w-1/3">
+              <div class="relative w-full md:w-1/2 lg:w-1/3 md:border-l-2 md:pl-10 ">
                 <div class="sticky top-5 z-10 mb-20 px-6 md:px-0">
                     <div class="h-64 border w-full">
                         <img src="./assets/ads.jpeg" alt="Ads" class="w-full h-64 object-cover">
@@ -791,49 +846,61 @@
                         <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Lorem ipsum</a>
                     </div>
                     <hr class="border border-b-gray-500 my-5">
+                    
+                    <!-- I Migliori Section -->
                     <h2 class="text-3xl uppercase mb-7 font-semibold text-green-700">I Migliori</h2>
                     <div class="flex flex-col gap-5">
-                        <a href="#">
-                            <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                    <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                </div>
+                        <!-- Article Link -->
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
                             </div>
-                        </a>
-                        <a href="#">
-                            <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                    <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                </div>
+                        </div>
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
                             </div>
-                        </a>
-                        <a href="#">
-                            <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                    <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                </div>
+                        </div>
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
                             </div>
-                        </a>
-                        <a href="#">
-                            <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                    <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                </div>
+                        </div>
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                      </div>
+
                     <h2 class="text-2xl uppercase mb-7 font-semibold text-green-700 my-7">Scopri Tutte Le Guide</h2>
                     <hr class="border border-b-gray-400 my-5">
                     <h2 class="text-3xl uppercase my-7 font-semibold text-green-700">Seguici Sui Social</h2>
@@ -847,8 +914,8 @@
                             <p class="font-semibold">Instagram</p>
                         </a>
                         <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                            <i class="fab fa-threads text-3xl"></i>
-                            <p class="font-semibold">Threads</p>
+                          <img src="./assets/threads.png" alt="whatsapp" class="w-8">
+                          <p class="font-semibold">Threads</p>
                         </a>
                         <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
                             <i class="fab fa-twitter text-3xl"></i>
@@ -877,8 +944,9 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <footer class="sticky top-full">
+    <footer class="sticky top-full w-full my-0">
       <div class="bg-green-700 py-8 px-6 text-white">
         <div
           class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3"

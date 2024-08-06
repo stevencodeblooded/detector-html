@@ -8,7 +8,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <style>
         .mobile-menu {
             transform: translateX(100%);
@@ -16,6 +17,10 @@
         }
         .mobile-menu.active {
             transform: translateX(0);
+        }
+         /* Custom styles for the carousel */
+        .slick-slide {
+            transition: transform 0.5s ease;
         }
     </style>
 </head>
@@ -101,12 +106,12 @@
                             news
                         </p>
                         <div class="flex-1">
-                            <hr class="border-b border-green-600" />
+                            <hr class="border-b border-gray-200" />
                         </div>
                     </div>
-                    <div class="max-w-6xl mx-auto flex flex-col gap-5 my-20">
-                        <h1 class="text-2xl md:text-3xl lg:text-5xl font-bold leading-snug text-left md:text-center">
-                            Dolor sit amet consectetur erferendis adipisci, facere quis magni laboriosam fugiat a.
+                    <div class="max-w-5xl mx-auto flex flex-col gap-5 my-10 md:my-20">
+                        <h1 class="text-2xl md:text-3xl lg:text-6xl font-bold leading-snug text-left md:text-center">
+                            Si avvicina l’estate, consigli per l’uso del metal detector in spiaggia
                         </h1>
                         <p class="text-base text-left md:text-2xl md:text-center max-w-5xl mx-auto text-gray-400 font-semibold">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nobis reprehenderit nostrum soluta dicta repudiandae voluptate dignissimos delectus minus mollitia? Possimus, beatae deserunt?
@@ -131,7 +136,7 @@
                             <div>
                                 <div class="flex flex-col gap-12">
                                     <div>
-                                        <section>
+                                        <di>
                                             <div>
                                                 <div class="flex items-center gap-2 md:gap-5 bg-green-200 p-6 rounded-t-2xl">
                                                     <img src="./assets/img_article_1.png" alt="" class="cursor-pointer w-12 h-12 md:w-24 md:h-24 rounded-xl object-cover" />
@@ -148,27 +153,161 @@
     
                                             <div class="flex flex-col gap-12">
                                                 <div class="space-y-5">
-                                                    <h2 class="text-2xl md:text-3xl lg:text-5xl font-semibold leading-snug">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
                                                         Considerazioni nella scelta del tuo miglior metal detector da spiaggia
                                                     </h2>
                                                     <p class="text-base text-left md:text-xl">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="font-semibold">Nostrum corporis</span> numquam aspernatur deleniti eum perferendis blanditiis repudiandae enim, culpa odit velit accusamus assumenda veritatis expedita beatae ducimus, libero atque. Cum, provident dolorum? Adipisci magnam animi aliquam ut, eveniet nihil! Reprehenderit!
+                                                        Quando si tratta di <span class="font-semibold">spazzolare in spiaggia</span>, è fondamentale comprendere come
+                                                        affrontare i minerali presenti nella sabbia. L’acqua salata amplifica i normali minerali,
+                                                        causando molte interferenze e segnali falsi nei detector terrestri. Fortunatamente,
+                                                        esistono dei modi per combattere questo problema
                                                     </p>
                                                 </div>
                                                 <div class="space-y-5">
-                                                    <h2 class="text-2xl md:text-3xl lg:text-5xl font-semibold leading-snug">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
                                                         Caratteristiche dei Miglior Metal Detector da Spiaggia
                                                     </h2>
                                                     <p class="text-base text-left md:text-xl">
-                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laudantium dignissimos sunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="font-semibold">Nostrum corporis</span> numquam aspernatur deleniti eum perferendis blanditiis repudiandae enim, culpa odit velit accusamus assumenda veritatis expedita beatae ducimus, libero atque. Cum, provident dolorum? Adipisci magnam animi aliquam ut, eveniet nihil! Reprehenderit!
+                                                        La funzione di <span class="font-semibold">bilanciamento del terreno</span> ti consentirà di impostare il tuo metal
+                                                        detector in base al livello di mineralizzazione della spiaggia. Molti metal detector di
+                                                        livello base presentano un bilanciamento del terreno preimpostato, ma per la
+                                                        spiaggia è preferibile optare per un metal detector a bassa frequenza (VLF) con
+                                                        controllo di bilanciamento del terreno. Tuttavia, i migliori metal detector da spiaggia
+                                                        utilizzano la tecnologia a impulsi di induzione (PI), che ignora semplicemente gli
+                                                        effetti dei minerali, consentendoti di iniziare subito a cercare.
                                                     </p>
                                                 </div>
                                                 <div class="space-y-5">
-                                                    <h2 class="text-2xl md:text-3xl lg:text-5xl font-semibold leading-snug">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex tenetur aliquam dolor?
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        Quali metal detector servono per la caccia in spiaggia?
                                                     </h2>
                                                     <p class="text-base text-left md:text-xl">
-                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laudantium dignissimos sunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="font-semibold">Nostrum corporis</span> numquam aspernatur deleniti eum perferendis blanditiis repudiandae enim, culpa odit velit accusamus assumenda veritatis expedita beatae ducimus, libero atque. Cum, provident dolorum? Adipisci magnam animi aliquam ut, eveniet nihil! Reprehenderit!
+                                                        Esistono metal detector impermeabili (IP67) e metal detector subacquei. Scegli la
+                                                        macchina che rispecchia la tua preferenza di ricerca. Ricorda che se scegli un metal
+                                                        detector con certificazione IP67, dovrai stare molto attento a non far entrare le gocce
+                                                        d’acqua del mare nel vano batterie o control box della macchina. Se vuoi
+                                                        approfondire la differenza tra le certificazioni IP67 e IP68, dai un’occhiata a questa
+                                                        risorsa informativa. Alcuni metal detector non subacquei possono essere immersi
+                                                        dalla piastra sino all’altezza del control box, ma non oltre
+                                                    </p>
+                                                </div>
+                                                <div class="space-y-5">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        Quali metal detector servono per la caccia in spiaggia?
+                                                    </h2>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Esistono metal detector impermeabili (IP67) e metal detector subacquei. Scegli la
+                                                        macchina che rispecchia la tua preferenza di ricerca. Ricorda che se scegli un metal
+                                                        detector con certificazione IP67, dovrai stare molto attento a non far entrare le gocce
+                                                        d’acqua del mare nel vano batterie o control box della macchina. Se vuoi
+                                                        approfondire la differenza tra le certificazioni IP67 e IP68, dai un’occhiata a questa
+                                                        risorsa informativa. Alcuni metal detector non subacquei possono essere immersi
+                                                        dalla piastra sino all’altezza del control box, ma non oltre
+                                                    </p>
+                                                </div>
+                                                <div class="space-y-5">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        L’importanza della scelta della Bobina di ricerca per il metal detecting in spiaggia
+                                                    </h2>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Detectoristi non più neofiti sostengono che una bobina di ricerca di dimensioni più
+                                                        piccole è l’ideale per una migliore maneggevolezza sulla sabbia. Una bobina più
+                                                        piccola aiuterà anche a ridurre l’affaticamento durante la ricerca in spiaggia. Anche
+                                                        una bobina di ricerca subacquea è indicata nella tua scelta del miglior metal detector
+                                                        da spiaggia.
+                                                    </p>
+                                                </div>
+                                                <div class="space-y-5">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        Come fare metal detecting in spiaggia
+                                                    </h2>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Ora che hai l’attrezzatura adeguata, devi sapere come usarla. Il metal detecting su
+                                                        una spiaggia è leggermente diverso rispetto ad altri tipi di ricerca, quindi ci sono
+                                                        alcune cose da ricordare quando cerchi in spiaggia. Pertanto, vogliamo condividere
+                                                        con te alcuni consigli che ti aiuteranno nella ricerca.
+                                                    </p>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Ricorda che la sabbia, specie in battigia, è in continuo cambiamento. A causa delle
+                                                        onde che avanzano e si ritirano costantemente, la sabbia si sposterà continuamente.
+                                                        A causa di ciò, potresti avere difficoltà a trovare ciò che stai cercando. La bassa marea
+                                                        è il momento migliore per fare metal detecting su una spiaggia.
+                                                    </p>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Quando fai metal detecting su una spiaggia, è importante spazzolare lentamente e
+                                                        metodicamente. Assicurati di coprire l’intera area e non dimenticare di passare
+                                                        nuovamente su aree già esplorate. Ogni volta che cerchi, è una buona idea utilizzare
+                                                        un modello a griglia per assicurarti di non perdere alcun punto. Il bilanciamento del
+                                                        terreno sul tuo metal detector dovrà anche essere regolato per la spiaggia. La sabbia
+                                                        può contenere elevate quantità di minerali, che sconvolgeranno il bilanciamento del
+                                                        terreno sulla maggior parte dei metal detector.
+                                                    </p>
+                                                </div>
+                                                <div class="space-y-5">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        Attrezzatura e buone maniere
+                                                    </h2>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Oltre a scegliere il tuo miglior metal detector da spiaggia, è molto importante
+                                                        disporre di Cuffie collegate al tuo metal detector, meglio ancora, per quelle con
+                                                        tecnologia Bluetooth, di avere quelle a Bassa Latenza. Ciò perché in spiaggia con il
+                                                        rumore delle onde e del vento, potresti non avvertire alcuni segnali acustici meno
+                                                        intensi e perderti così qualche target più in profondità.
+                                                    </p>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Assicurati di scegliere una paletta in acciaio inossidabile o alluminio per sabbia, in
+                                                        modo da poter scavare facilmente ed evitare la formazione di ruggine su di essa.
+                                                    </p>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Anche se il metal detecting sulla spiaggia può essere molto divertente, è importante
+                                                        ricordare di rispettare l’ambiente mentre lo fai. Assicurati che tutti i buchi che scavate
+                                                        vengano ricoperti. Potresti portare con te un sacchetto dove riporre i target
+                                                        immondizia che faranno sicuramente parte della tua ricerca, e a fine spazzolata,
+                                                        semplicemente smaltire correttamente.
+                                                    </p>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        In caso di ritrovamento di oggetti di valore affettivo oltre che economico, come per
+                                                        esempio le fedi nunziali, potresti valutare l’idea di consegnare il target al comune
+                                                        della spiaggia dove è stato effettuato il ritrovamento, in attesa che i proprietari
+                                                        vadano a reclamare lo smarrimento dello stesso. Puoi anche denunciare il
+                                                        ritrovamento a dei servizi di Recupero Oggetti Smarriti con Metal Detector.
+                                                    </p>
+                                                </div>
+
+                                                <div class="space-y-5">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        Selezione dei Migliori Metal Detector da Spiaggia
+                                                    </h2>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        Ecco una piccola lista generica su cui basarti per scegliere il tuo miglior metal detector da spiaggia:
+                                                    </p>
+
+                                                    <h2 class="font-semibold text-lg md:text-xl">Metal Detector per la ricerca in spiaggia di livello base:</h2>
+                                                    <ul class=" list-disc text-base ml-10 md:text-lg">
+                                                        <li>Garrett Ace 25u</li>
+                                                        <li>Novta Mavro Simplex Plus (Lite, BT o Ultra)</li>
+                                                    </ul>
+                                                    
+                                                    <h2 class="font-semibold text-lg md:text-xl">Metal Detector per la ricerca in spiaggia di livello base:</h2>
+                                                    <ul class=" list-disc text-base ml-10 md:text-lg">
+                                                        <li>Garrett Ace 25u</li>
+                                                        <li>Novta Mavro Simplex Plus (Lite, BT o Ultra)</li>
+                                                    </ul>
+
+                                                </div>
+
+                                                <div class="space-y-5">
+                                                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+                                                        Conclusioni
+                                                    </h2>
+                                                    <p class="text-base text-left md:text-xl">
+                                                        L’estate è il momento perfetto per esplorare le spiagge con un metal detector.
+                                                        Scegliere il miglior metal detector da spiaggia può fare la differenza tra un’esperienza
+                                                        gratificante e una deludente. Ricorda di considerare caratteristiche come il
+                                                        bilanciamento del terreno e la resistenza all’acqua salata quando fai la tua scelta.
+                                                        Utilizzando attrezzature appropriate e seguendo buone pratiche, puoi goderti
+                                                        appieno l’emozione della ricerca su spiaggia, rispettando sempre l’ambiente
+                                                        circostante. Buona ricerca!
                                                     </p>
                                                 </div>
                                             </div>
@@ -180,200 +319,229 @@
                                                 <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garrett</a>
                                                 <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Lorem ipsum</a>
                                             </div>
-    
-                                            <div class="container mx-auto py-8">
-                                                <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
-                                                    <h2 class="text-3xl md:text-5xl font-bold text-green-700">Scelti per te...</h2>
-                                                    <div class="flex items-center self-end">
-                                                        <button onclick="prev()" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
-                                                            <i class="fas fa-chevron-left"></i>
-                                                        </button>
-                                                        <button onclick="next()" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
-                                                            <i class="fas fa-chevron-right"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="pt-12">
-                                                    <!-- Slider items -->
-                                                    <div class="flex space-x-4 overflow-x-auto">
-                                                        <div class="min-w-full px-2" style="width: calc(100vw - 180px);">
-                                                            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                                                                <img src="https://via.placeholder.com/300x400?text=Image+1" alt="Placeholder 1" class="w-full h-64 object-cover" />
-                                                                <div class="p-4 bg-gray-900 bg-opacity-50">
-                                                                    <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
-                                                                    <p class="text-white font-extralight">Recensioni</p>
-                                                                </div>
+                                            
+                                            
+                                            <!--SLIDER GOES HERE  -->
+                                            <div class="w-full md:mb-32">
+                                                <div class="flex flex-col gap-12">
+                                                    <!-- SchedeTechniche Component -->
+                                                    <div class="schede-techniche-component">
+                                                        <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
+                                                            <h2 class="text-3xl md:text-5xl font-bold text-green-700">Schede Techniche</h2>
+                                                            <div class="flex items-center self-end">
+                                                                <p class="text-green-700 font-bold mr-4 uppercase text-xl">Tutte le Schede</p>
+                                                                <button id="schede-prev" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                                                </button>
+                                                                <button id="schede-next" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                                                </button>
                                                             </div>
                                                         </div>
-                                                        <div class="min-w-full px-2" style="width: calc(100vw - 180px);">
-                                                            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                                                                <img src="https://via.placeholder.com/300x400?text=Image+2" alt="Placeholder 2" class="w-full h-64 object-cover" />
-                                                                <div class="p-4 bg-gray-900 bg-opacity-50">
-                                                                    <h3 class="text-white font-bold text-2xl mb-2">Recensioni Garrett Ace Apex</h3>
-                                                                    <p class="text-white font-extralight">Recensioni</p>
+                                                        <div class="slider schede-slider pt-12">
+                                                            <div class="px-2" style="width: calc(100vw - 130px);">
+                                                                <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                                                                    <!-- Image -->
+                                                                    <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
+                                                            
+                                                                    <!-- Text Overlay -->
+                                                                    <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                                                        <h3 class="text-white font-bold text-2xl mb-2">Scheda 1</h3>
+                                                                        <p class="text-white font-extralight">Descrizione</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="min-w-full px-2" style="width: calc(100vw - 180px);">
-                                                            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                                                                <img src="https://via.placeholder.com/300x400?text=Image+3" alt="Placeholder 3" class="w-full h-64 object-cover" />
-                                                                <div class="p-4 bg-gray-900 bg-opacity-50">
-                                                                    <h3 class="text-white font-bold text-2xl mb-2">Deus II</h3>
-                                                                    <p class="text-white font-extralight">Recensioni</p>
+                                                            <div class="px-2" style="width: calc(100vw - 130px);">
+                                                                <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                                                                    <!-- Image -->
+                                                                    <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
+                                                            
+                                                                    <!-- Text Overlay -->
+                                                                    <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                                                        <h3 class="text-white font-bold text-2xl mb-2">Scheda 1</h3>
+                                                                        <p class="text-white font-extralight">Descrizione</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="px-2" style="width: calc(100vw - 130px);">
+                                                                <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                                                                    <!-- Image -->
+                                                                    <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
+                                                            
+                                                                    <!-- Text Overlay -->
+                                                                    <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                                                        <h3 class="text-white font-bold text-2xl mb-2">Scheda 1</h3>
+                                                                        <p class="text-white font-extralight">Descrizione</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="px-2" style="width: calc(100vw - 130px);">
+                                                                <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                                                                    <!-- Image -->
+                                                                    <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
+                                                            
+                                                                    <!-- Text Overlay -->
+                                                                    <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                                                        <h3 class="text-white font-bold text-2xl mb-2">Scheda 1</h3>
+                                                                        <p class="text-white font-extralight">Descrizione</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="px-2" style="width: calc(100vw - 130px);">
+                                                                <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                                                                    <!-- Image -->
+                                                                    <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
+                                                            
+                                                                    <!-- Text Overlay -->
+                                                                    <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                                                        <h3 class="text-white font-bold text-2xl mb-2">Scheda 1</h3>
+                                                                        <p class="text-white font-extralight">Descrizione</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-    
-                                            <div class="container mx-auto py-8">
-                                                <h2 class="text-3xl md:text-5xl font-bold text-green-700">Articoli recenti</h2>
-                                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-12">
-                                                    <div>
-                                                        <img src="https://via.placeholder.com/300x300?text=Recent+Article+1" alt="Recent Article 1" class="w-full h-48 object-cover rounded-lg" />
-                                                        <h3 class="text-xl font-semibold mt-4">Lorem ipsum dolor sit amet</h3>
-                                                        <p class="text-gray-500">Consectetur adipiscing elit</p>
-                                                    </div>
-                                                    <div>
-                                                        <img src="https://via.placeholder.com/300x300?text=Recent+Article+2" alt="Recent Article 2" class="w-full h-48 object-cover rounded-lg" />
-                                                        <h3 class="text-xl font-semibold mt-4">Lorem ipsum dolor sit amet</h3>
-                                                        <p class="text-gray-500">Consectetur adipiscing elit</p>
-                                                    </div>
-                                                    <div>
-                                                        <img src="https://via.placeholder.com/300x300?text=Recent+Article+3" alt="Recent Article 3" class="w-full h-48 object-cover rounded-lg" />
-                                                        <h3 class="text-xl font-semibold mt-4">Lorem ipsum dolor sit amet</h3>
-                                                        <p class="text-gray-500">Consectetur adipiscing elit</p>
-                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sticky content on the Right -->
+                            <div class="relative w-full md:w-1/3 md:border-l-2 md:pl-10 mb-12">
+                                <div class="sticky top-0 md:top-5">
+                                    <div class="sticky z-10 mb-20 px-6 md:px-0">
+                                        <!-- Advertisement Image -->
+                                        <div class="h-64 border w-full">
+                                            <img src="../assets/ads.jpeg" alt="Ads" class="w-full h-64 object-cover">
+                                        </div>
+                                        
+                                        <!-- Divider -->
+                                        <hr class="border border-b-gray-500 my-5" />
+                                
+                                        <!-- Trends Section -->
+                                        <h2 class="flex items-center gap-2 my-5 text-3xl uppercase font-semibold text-green-700">
+                                            <i class="fas fa-fire"></i> Trends
+                                        </h2>
+                                        <div class="flex flex-wrap gap-2">
+                                            <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Nokta marko</a>
+                                            <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garet</a>
+                                            <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">News</a>
+                                            <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garrett</a>
+                                            <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Lorem ipsum</a>
+                                        </div>
+                                
+                                        <!-- Divider -->
+                                        <hr class="border border-b-gray-500 my-5" />
+                                
+                                        <!-- I Migliori Section -->
+                                        <h2 class="text-3xl uppercase mb-7 font-semibold text-green-700">I Migliori</h2>
+                                        <div class="flex flex-col gap-5">
+                                            <!-- Article Link -->
+                                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                                                <div class="space-y-1">
+                                                    <p class="text-xs">Emilio G</p>
+                                                    <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                                    </p>
+                                                    <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                                        Curiosita
+                                                    </p>
                                                 </div>
                                             </div>
-    
-                                        </section>
+                                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                                                <div class="space-y-1">
+                                                    <p class="text-xs">Emilio G</p>
+                                                    <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                                    </p>
+                                                    <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                                        Curiosita
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                                                <div class="space-y-1">
+                                                    <p class="text-xs">Emilio G</p>
+                                                    <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                                    </p>
+                                                    <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                                        Curiosita
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                                                <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                                                <div class="space-y-1">
+                                                    <p class="text-xs">Emilio G</p>
+                                                    <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                                    </p>
+                                                    <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                                        Curiosita
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Scopri Tutte Le Guide Section -->
+                                        <h2 class="text-2xl uppercase mb-7 font-semibold text-green-700 my-7">Scopri Tutte Le Guide</h2>
+                                
+                                        <!-- Divider -->
+                                        <hr class="border border-b-gray-400 my-5" />
+                                
+                                        <!-- Seguici Sui Social Section -->
+                                        <h2 class="text-3xl uppercase my-7 font-semibold text-green-700">Seguici Sui Social</h2>
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <img src="../assets/facebook.png" alt="facebook" class="w-14">
+                                                <p class="font-semibold">Facebook</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <i class="fab fa-instagram text-3xl"></i>
+                                                <p class="font-semibold">Instagram</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <img src="./assets/threads.png" alt="whatsapp" class="w-8">
+                                                <p class="font-semibold">Threads</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <i class="fab fa-twitter text-3xl"></i>
+                                                <p class="font-semibold">Twitter</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <img src="../assets/whatsapp.png" alt="whatsapp" class="w-8">
+                                                <p class="font-semibold">Whatsapp</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <img src="../assets/telegram.png" alt="telegram" class="w-8">
+                                                <p class="font-semibold">Telegram</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <img src="../assets/spotify.png" alt="spotify" class="w-10">
+                                                <p class="font-semibold">Spotify</p>
+                                            </a>
+                                            <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                                                <img src="../assets/tiktok.png" alt="Tik Tok" class="w-7">
+                                                <p class="font-semibold">Tik Tok</p>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Sidebar on the right -->
-                        <div >
-                            <div class="sticky top-5 z-10 mb-20 px-6 md:px-0  md:border-l-2 md:pl-8">
-                                <div class="h-64 border w-full">
-                                    <img src="./assets/ads.jpeg" alt="Ads" class="w-full h-64 object-cover">
-                                </div>
-                                <hr class="border border-b-gray-500 my-5">
-                                <h2 class="flex items-center gap-2 my-5 text-3xl uppercase font-semibold text-green-700">
-                                    <i class="fas fa-fire"></i> Trends
-                                </h2>
-                                <div class="flex flex-wrap gap-2">
-                                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Nokta marko</a>
-                                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garet</a>
-                                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">News</a>
-                                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garrett</a>
-                                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Lorem ipsum</a>
-                                </div>
-                                <hr class="border border-b-gray-500 my-5">
-                                <h2 class="text-3xl uppercase mb-7 font-semibold text-green-700">I Migliori</h2>
-                                <div class="flex flex-col gap-5">
-                                    <a href="#">
-                                        <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                            <div class="flex flex-col gap-1">
-                                                <p class="text-xs">Emilio G</p>
-                                                <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                                <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                            <div class="flex flex-col gap-1">
-                                                <p class="text-xs">Emilio G</p>
-                                                <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                                <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                            <div class="flex flex-col gap-1">
-                                                <p class="text-xs">Emilio G</p>
-                                                <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                                <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                            <div class="flex flex-col gap-1">
-                                                <p class="text-xs">Emilio G</p>
-                                                <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                                <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <h2 class="text-2xl uppercase mb-7 font-semibold text-green-700 my-7">Scopri Tutte Le Guide</h2>
-                                <hr class="border border-b-gray-400 my-5">
-                                <h2 class="text-3xl uppercase my-7 font-semibold text-green-700">Seguici Sui Social</h2>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <img src="./assets/facebook.png" alt="facebook" class="w-14">
-                                        <p class="font-semibold">Facebook</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <i class="fab fa-instagram text-3xl"></i>
-                                        <p class="font-semibold">Instagram</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <i class="fab fa-threads text-3xl"></i>
-                                        <p class="font-semibold">Threads</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <i class="fab fa-twitter text-3xl"></i>
-                                        <p class="font-semibold">Twitter</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <img src="./assets/whatsapp.png" alt="whatsapp" class="w-8">
-                                        <p class="font-semibold">Whatsapp</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <img src="./assets/telegram.png" alt="telegram" class="w-8">
-                                        <p class="font-semibold">Telegram</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <img src="./assets/spotify.png" alt="spotify" class="w-10">
-                                        <p class="font-semibold">Spotify</p>
-                                    </a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                        <img src="./assets/tiktok.png" alt="Tik Tok" class="w-7">
-                                        <p class="font-semibold">Tik Tok</p>
-                                    </a>
-                                </div>
-                            </div>
-                          </div>
                     </div>
                 </div>
             </div>
         </div>
-    
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class=" sticky top-full">
+<footer class=" sticky top-full">
         <div class="bg-green-700 py-8 px-6 text-white">
           <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
             <div class="lg:w-4/5">
@@ -401,49 +569,48 @@
         <div class="bg-gray-800 py-4 px-2 text-white">
           <p class="text-xs text-center">Copyrights <i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear());</script> <span class="font-semibold">Detector Mania</span> | Lorem ipsum dolor sit. | Privacy e Cookie Policy - Redazione - design by <span class="font-semibold">Cromia</span></p>
         </div>
-      </footer>
+    </footer>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-        const darkMode = false;
+        $(document).ready(function(){
+            $('.schede-slider').slick({
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        },
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: false,
+                            centerPadding: '0px',
+                            variableWidth: true,
+                        },
+                    },
+                ],
+            });
 
-        function toggleDarkMode() {
-                document.body.classList.toggle('dark-mode');
-                document.body.classList.toggle('light-mode');
-            }
+            $('#schede-next').click(function(){
+                $('.schede-slider').slick('slickNext');
+            });
 
-        function toggleDarkMode() {
-            document.body.classList.toggle('bg-gray-800');
-            document.body.classList.toggle('text-white');
-            document.body.classList.toggle('bg-white');
-            document.body.classList.toggle('text-gray-900');
-        }
-
-        function toggleNotifications() {
-            document.getElementById('notifications').classList.toggle('hidden');
-        }
-
-        function toggleSearch() {
-            const searchInput = document.getElementById('searchInput');
-            const clearSearch = document.getElementById('clearSearch');
-            searchInput.classList.toggle('hidden');
-            clearSearch.classList.toggle('hidden');
-        }
-
-        function clearSearch() {
-            const searchInput = document.getElementById('searchInput');
-            searchInput.value = '';
-            toggleSearch();
-        }
-
-        function showMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('hidden');
-            document.getElementById('mobileNavLinks').classList.add('flex');
-        }
-
-        function hideMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('flex');
-            document.getElementById('mobileNavLinks').classList.add('hidden');
-        }
+            $('#schede-prev').click(function(){
+                $('.schede-slider').slick('slickPrev');
+            });
+        });
     </script>
 </body>
 </html>

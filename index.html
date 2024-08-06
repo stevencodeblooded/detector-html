@@ -24,6 +24,7 @@
         }
     </style>
 </head>
+
 <body class="min-h-screen">
     <div id="navigation" class="relative w-full bg-white text-gray-900 transition-colors duration-300">
         <div class="bg-green-700 py-2 "></div>
@@ -39,7 +40,7 @@
                 <li><a href="trekking.html" class="hover:text-green-600 transition-all">Trekking</a></li>
                 <li class="flex items-center gap-1">
                     <p><a href="#recension">Recension</a></p>
-                    <p class="text-xs p-1 rounded-md bg-yellow-100 flex items-center gap-1">New <img class="w-3" src="path/to/flammable.svg" alt=""></p>
+                    <p class="text-xs p-1 rounded-md bg-yellow-100 flex items-center gap-1">New <img class="w-3" src="./assets/flammable.svg" alt=""></p>
                 </li>
                 <li><a href="schede.html" class="hover:text-green-600 transition-all">Schede Tecniche</a></li>
                 <li><a href="arte.html" class="hover:text-green-600 transition-all">Arte e storia</a></li>
@@ -151,468 +152,891 @@
         <div class="max-w-7xl mx-auto" id="recension">
             <div class="flex flex-col md:flex-row gap-8">
                 <!-- Main content on the left -->
-                <div class="w-full md:w-2/3">
-                    <div class="flex flex-col gap-12">
-                        <!-- Slider Component -->
-                        <div class="slider-component">
-                            <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
-                                <h2 class="text-3xl md:text-5xl font-bold text-green-700">Recensioni</h2>
-                                <div class="flex items-center self-end">
-                                    <p class="text-green-700 font-bold mr-4 uppercase text-xl">Tutte le Recensioni</p>
-                                    <button id="prev" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                    </button>
-                                    <button id="next" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="slider pt-12">
-                                <div class="px-2" style="width: calc(100vw - 130px);">
-                                    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
-                                        <!-- Image -->
-                                        <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
-                                
-                                        <!-- Text Overlay -->
-                                        <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
-                                            <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
-                                            <p class="text-white font-extralight">Recensioni</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                                                <!-- Slide Container -->
-                                <div class="px-2" style="width: calc(100vw - 130px);">
-                                    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
-                                        <!-- Image -->
-                                        <img src="./assets/metal_1.png" alt="Placeholder 2" class="w-full h-96 object-contain">
-
-                                        <!-- Text Overlay -->
-                                        <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
-                                            <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
-                                            <p class="text-white font-extralight">Recensioni</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="px-2" style="width: calc(100vw - 130px);">
-                                    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
-                                        <!-- Image -->
-                                        <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full h-96 object-contain">
-
-                                        <!-- Text Overlay -->
-                                        <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
-                                            <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
-                                            <p class="text-white font-extralight">Recensioni</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="px-2" style="width: calc(100vw - 130px);">
-                                    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
-                                        <!-- Image -->
-                                        <img src="./assets/metal_1.png" alt="Placeholder 2" class="w-full h-96 object-contain">
-
-                                        <!-- Text Overlay -->
-                                        <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
-                                            <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
-                                            <p class="text-white font-extralight">Recensioni</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="px-2" style="width: calc(100vw - 130px);">
-                                    <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
-                                        <!-- Image -->
-                                        <img src="./assets/metal_1.png" alt="Placeholder 2" class="w-full h-96 object-contain">
-
-                                        <!-- Text Overlay -->
-                                        <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
-                                            <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
-                                            <p class="text-white font-extralight">Recensioni</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <!-- Comparazione Component -->
-                        <div class="comparazione-component">
-                            <section class="max-w-7xl mx-auto">
-                                <div class="bg-green-500 p-4 md:px-10 md:py-16 rounded-2xl">
-                                    <h2 class="uppercase text-xs md:text-sm lg:text-lg bg-green-300 py-1 px-3 md:px-6 text-green-800 w-fit rounded-lg">Comparazione Metal Detector</h2>
-                                    <h1 class="text-xl my-2 lg:text-5xl font-bold leading-snug w-4/5 text-white">Scegli il metal detector perfetto per te.</h1>
-                                    <p class="text-white text-xs md:text-sm lg:text-lg w-5/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa corporis minus autem harum aliquid neque incidunt similique ab suscipit, minima quo rem quasi, nulla, officiis error. Vitae provident accusamus dolorum!</p>
-                                </div>
-                            </section>
-                        </div>
-    
-                        <!-- Migliori Component -->
-                        <div class="migliori-component">
-                            <section>
-                                <div class="flex flex-col gap-8 p-4 max-w-7xl mx-auto">
-                                    <!-- First Link -->
-                                    <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                        <img src="../assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                        <div class="flex flex-col gap-1">
-                                            <p class="text-xs">Emilio G</p>
-                                            <p class="text-lg leading-none lg:text-3xl font-bold">
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                            </p>
-                                            <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                                Curiosita
-                                            </p>
-                                        </div>
-                                    </a>
-                                    
-                                    <!-- Second Link -->
-                                    <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                        <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                        <div class="flex flex-col gap-1">
-                                            <p class="text-xs">Emilio G</p>
-                                            <p class="text-lg leading-none lg:text-3xl font-bold">
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                            </p>
-                                            <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                                Curiosita
-                                            </p>
-                                        </div>
-                                    </a>
-                                    
-                                    <!-- Third Link -->
-                                    <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                        <img src="../assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                        <div class="flex flex-col gap-1">
-                                            <p class="text-xs">Emilio G</p>
-                                            <p class="text-lg leading-none lg:text-3xl font-bold">
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                            </p>
-                                            <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-12 text-xs md:text-sm font-extralight">
-                                                Curiosita
-                                            </p>
-                                        </div>
-                                    </a>
-                                    
-                                    <!-- Fourth Link -->
-                                    <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                        <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                        <div class="flex flex-col gap-1">
-                                            <p class="text-xs">Emilio G</p>
-                                            <p class="text-lg leading-none lg:text-3xl font-bold">
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                            </p>
-                                            <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                                Curiosita
-                                            </p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </section>
-                        </div>
-    
-                        <!-- OfferteInEvidenza Component -->
-                        <div class="offerte-in-evidenza-component">
-                            OfferteInEvidenza Here
-                        </div>
-
-
-                        <div class="flex flex-col gap-8 p-4 max-w-7xl mx-auto">
-                            <!-- First Link -->
-                            <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                <img src="../assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="text-lg leading-none lg:text-3xl font-bold">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                    </p>
-                                    <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                        Curiosita
-                                    </p>
-                                </div>
-                            </a>
-                            
-                            <!-- Second Link -->
-                            <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="text-lg leading-none lg:text-3xl font-bold">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                    </p>
-                                    <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                        Curiosita
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-    
-                        <!-- DetectorManiaTv Component -->
-                        <div class="detector-mania-tv-component">
-                            <!-- DetectorManiaTv content here -->
-                            DetectorManiaTv
-                        </div>
-
-                        <div class="flex flex-col gap-8 p-4 max-w-7xl mx-auto">
-                            <!-- First Link -->
-                            <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                <img src="../assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="text-lg leading-none lg:text-3xl font-bold">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                    </p>
-                                    <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                        Curiosita
-                                    </p>
-                                </div>
-                            </a>
-                            
-                            <!-- Second Link -->
-                            <a href="#" class="flex items-center gap-5 cursor-pointer hover:opacity-70">
-                                <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
-                                <div class="flex flex-col gap-1">
-                                    <p class="text-xs">Emilio G</p>
-                                    <p class="text-lg leading-none lg:text-3xl font-bold">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
-                                    </p>
-                                    <p class="bg-green-300 px-4 md:px-8 py-1 text-green-600 rounded-xl w-fit text-xs md:text-sm font-extralight">
-                                        Curiosita
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-    
-                        <!-- SchedeTechniche Component -->
-                        <div class="schede-techniche-component">
-                            <!-- SchedeTechniche content here -->
-                            schede-techniche
-                        </div>
+    <div class="w-full md:w-2/3">
+        <div class="flex flex-col gap-12">
+            <!-- Slider Component -->
+            <div class="slider-component">
+                <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
+                    <h2 class="text-3xl md:text-5xl font-bold text-green-700">Recensioni</h2>
+                    <div class="flex items-center self-end">
+                        <p class="text-green-700 font-bold mr-4 uppercase text-xl">Tutte le Recensioni</p>
+                        <button id="recensioni-prev" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="recensioni-next" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
                     </div>
                 </div>
-
-                <!-- Sticky component on the right -->
-                <div class="relative w-full md:w-1/3 md:border-l-2 md:pl-10 ">
-                    <div class="sticky top-0">
-                        <div class="sticky top-5 z-10 mb-20 px-6 md:px-0">
-                            <!-- Advertisement Image -->
-                            <div class="h-64 border w-full">
-                                <img src="../assets/ads.jpeg" alt="Ads" class="w-full h-64 object-cover">
-                            </div>
-                            
-                            <!-- Divider -->
-                            <hr class="border border-b-gray-500 my-5" />
+                <div class="slider recensioni-slider pt-12">
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                            <!-- Image -->
+                            <img src="./assets/metal_1.png" alt="Placeholder 2" class="w-full py-2 h-96 object-contain">
                     
-                            <!-- Trends Section -->
-                            <h2 class="flex items-center gap-2 my-5 text-3xl uppercase font-semibold text-green-700">
-                                <i class="fas fa-fire"></i> Trends
-                            </h2>
-                            <div class="flex flex-wrap gap-2">
-                                <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Nokta marko</a>
-                                <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garet</a>
-                                <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">News</a>
-                                <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garrett</a>
-                                <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Lorem ipsum</a>
-                            </div>
-                    
-                            <!-- Divider -->
-                            <hr class="border border-b-gray-500 my-5" />
-                    
-                            <!-- I Migliori Section -->
-                            <h2 class="text-3xl uppercase mb-7 font-semibold text-green-700">I Migliori</h2>
-                            <div class="flex flex-col gap-5">
-                                <!-- Article Link -->
-                                <a href="#" class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                    <img src="../assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                    <div class="flex flex-col gap-1">
-                                        <p class="text-xs">Emilio G</p>
-                                        <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                        <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                    <img src="../assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                    <div class="flex flex-col gap-1">
-                                        <p class="text-xs">Emilio G</p>
-                                        <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                        <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="flex items-center gap-4 cursor-pointer hover:opacity-70">
-                                    <img src="../assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
-                                    <div class="flex flex-col gap-1">
-                                        <p class="text-xs">Emilio G</p>
-                                        <p class="font-bold leading-5 hover:underline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.</p>
-                                        <p class="bg-green-300 px-2 py- rounded-md w-fit text-xs font-extralight">Curiosta</p>
-                                    </div>
-                                </a>
-                                <!-- Repeat the article link as needed -->
-                            </div>
-                    
-                            <!-- Scopri Tutte Le Guide Section -->
-                            <h2 class="text-2xl uppercase mb-7 font-semibold text-green-700 my-7">Scopri Tutte Le Guide</h2>
-                    
-                            <!-- Divider -->
-                            <hr class="border border-b-gray-400 my-5" />
-                    
-                            <!-- Seguici Sui Social Section -->
-                            <h2 class="text-3xl uppercase my-7 font-semibold text-green-700">Seguici Sui Social</h2>
-                            <div class="grid grid-cols-2 gap-3">
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <img src="../assets/facebook.png" alt="facebook" class="w-14">
-                                    <p class="font-semibold">Facebook</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <i class="fab fa-instagram text-3xl"></i>
-                                    <p class="font-semibold">Instagram</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <i class="fab fa-threads text-3xl"></i>
-                                    <p class="font-semibold">Threads</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <i class="fab fa-twitter text-3xl"></i>
-                                    <p class="font-semibold">Twitter</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <img src="../assets/whatsapp.png" alt="whatsapp" class="w-8">
-                                    <p class="font-semibold">Whatsapp</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <img src="../assets/telegram.png" alt="telegram" class="w-8">
-                                    <p class="font-semibold">Telegram</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <img src="../assets/spotify.png" alt="spotify" class="w-10">
-                                    <p class="font-semibold">Spotify</p>
-                                </a>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
-                                    <img src="../assets/tiktok.png" alt="Tik Tok" class="w-7">
-                                    <p class="font-semibold">Tik Tok</p>
-                                </a>
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
+                                <p class="text-white font-extralight">Recensioni</p>
                             </div>
                         </div>
                     </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                            <!-- Image -->
+                            <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full py-2 h-96 object-contain">
+                    
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
+                                <p class="text-white font-extralight">Recensioni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                            <!-- Image -->
+                            <img src="./assets/metal_3.png" alt="Placeholder 2" class="w-full py-2 h-96 object-contain">
+                    
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
+                                <p class="text-white font-extralight">Recensioni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                            <!-- Image -->
+                            <img src="./assets/metal_2.png" alt="Placeholder 2" class="w-full py-2 h-96 object-contain">
+                    
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
+                                <p class="text-white font-extralight">Recensioni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="relative bg-white rounded-xl shadow-lg overflow-hidden">
+                            <!-- Image -->
+                            <img src="./assets/metal_1.png" alt="Placeholder 2" class="w-full py-2 h-96 object-contain">
+                    
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-0 flex flex-col justify-end p-4 bg-gray-600 bg-opacity-50">
+                                <h3 class="text-white font-bold text-2xl mb-2">Nokta Makro The Legend</h3>
+                                <p class="text-white font-extralight">Recensioni</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More slides here -->
+                </div>
+            </div>
+
+            <!-- Comparazione Component -->
+            <div class="comparazione-component">
+                <section class="max-w-7xl mx-auto">
+                    <div class="bg-green-500 px-4 py-8 md:px-10 md:py-16 rounded-2xl">
+                        <h2 class="uppercase text-xs w-1/2 md:text-sm lg:text-lg bg-green-300 py-1 px-3 md:px-6 text-green-800 rounded-lg">Comparazione Metal Detector</h2>
+                        <h1 class="text-3xl my-2 md:my-4 lg:text-5xl font-bold leading-snug w-4/5 text-white">Scegli il metal detector perfetto per te.</h1>
+                        <p class="text-white text-xs md:text-sm lg:text-lg w-5/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa corporis minus autem harum aliquid neque incidunt similique ab suscipit, minima quo rem quasi, nulla, officiis error. Vitae provident accusamus dolorum!</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Migliori Component -->
+            <div class="migliori-component">
+                <section>
+                    <div class="flex flex-col gap-8 p-4 max-w-7xl mx-auto">
+                        <!-- First Link -->
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-lg leading-none lg:text-3xl font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-lg leading-none lg:text-3xl font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="./assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-lg leading-none lg:text-3xl font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Fourth Link -->
+                        <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                            <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                            <div class="space-y-1">
+                                <p class="text-xs">Emilio G</p>
+                                <p class="text-lg leading-none lg:text-3xl font-bold">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                                </p>
+                                <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                    Curiosita
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- OfferteInEvidenza Component -->
+            <div class="offerte-in-evidenza-component">
+                <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
+                    <h2 class="text-3xl md:text-5xl font-bold text-green-700">Offerte In Evidenza</h2>
+                    <div class="flex items-center self-end">
+                        <p class="text-green-700 font-bold mr-4 uppercase text-xl">Tutte le Offerte</p>
+                        <button id="offerte-prev" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="offerte-next" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="slider offerte-slider pt-12">
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-2xl py-4 cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_3.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 mb-3 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-2">
+                              <h3 class="font-bold text-3xl mb-1">
+                                Nokta FindX
+                              </h3>
+                              <p class="text-3xl font-extralight">
+                                <i class="fas fa-euro-sign"></i> 179,90
+                              </p>
+                              <div class="p-3 w-full">
+                                <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
+                                  <h3 class="font-semibold">Offerta su</h3>
+                                  <div class="flex items-center gap-3">
+                                    <img src="./assets/amazon.png" alt="" class="w-16" />
+                                    <i class="fas fa-chevron-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-2xl py-4 cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_1.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 mb-3 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-2">
+                              <h3 class="font-bold text-3xl mb-1">
+                                Nokta FindX
+                              </h3>
+                              <p class="text-3xl font-extralight">
+                                <i class="fas fa-euro-sign"></i> 179,90
+                              </p>
+                              <div class="p-3 w-full">
+                                <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
+                                  <h3 class="font-semibold">Offerta su</h3>
+                                  <div class="flex items-center gap-3">
+                                    <img src="./assets/amazon.png" alt="" class="w-16" />
+                                    <i class="fas fa-chevron-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-2xl py-4 cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_2.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 mb-3 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-2">
+                              <h3 class="font-bold text-3xl mb-1">
+                                Nokta FindX
+                              </h3>
+                              <p class="text-3xl font-extralight">
+                                <i class="fas fa-euro-sign"></i> 179,90
+                              </p>
+                              <div class="p-3 w-full">
+                                <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
+                                  <h3 class="font-semibold">Offerta su</h3>
+                                  <div class="flex items-center gap-3">
+                                    <img src="./assets/amazon.png" alt="" class="w-16" />
+                                    <i class="fas fa-chevron-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-2xl py-4 cursor-pointer shadow-lg border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_3.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 mb-3 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-2">
+                              <h3 class="font-bold text-3xl mb-1">
+                                Nokta FindX
+                              </h3>
+                              <p class="text-3xl font-extralight">
+                                <i class="fas fa-euro-sign"></i> 179,90
+                              </p>
+                              <div class="p-3 w-full">
+                                <div class="flex items-center justify-between bg-yellow-400 hover:bg-yellow-500 transition-all py-2 px-4 rounded-xl w-full">
+                                  <h3 class="font-semibold">Offerta su</h3>
+                                  <div class="flex items-center gap-3">
+                                    <img src="./assets/amazon.png" alt="" class="w-16" />
+                                    <i class="fas fa-chevron-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <!-- More slides here -->
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-8 p-4 max-w-7xl mx-auto">
+                <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                    <img src="./assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                    <div class="space-y-1">
+                        <p class="text-xs">Emilio G</p>
+                        <p class="text-lg leading-none lg:text-3xl font-bold">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                        </p>
+                        <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                            Curiosita
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                    <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                    <div class="space-y-1">
+                        <p class="text-xs">Emilio G</p>
+                        <p class="text-lg leading-none lg:text-3xl font-bold">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                        </p>
+                        <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                            Curiosita
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DetectorManiaTv Component -->
+            <div class="detector-mania-tv-component">
+                <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
+                    <h2 class="text-3xl md:text-5xl font-bold text-green-700">Detector Mania TV</h2>
+                    <div class="flex items-center self-end">
+                        <p class="text-green-700 font-bold mr-4 uppercase text-xl">Tutti i Video</p>
+                        <button id="detector-prev" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="detector-next" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="slider detector-slider pt-12">
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg border-4 p-3 cursor-pointer border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/img_article_1.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-cover rounded-xl"
+                            />
+                            <div class="p-4 bg-opacity-50">
+                              <h3 class="text-center font-bold text-2xl mb-2">
+                                Record di lancio in lungo: Mattia Detector89 lancia il Voyager a 52 metri di distanza
+                              </h3>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg border-4 p-3 cursor-pointer border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/img_article_1.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-cover rounded-xl"
+                            />
+                            <div class="p-4 bg-opacity-50">
+                              <h3 class="text-center font-bold text-2xl mb-2">
+                                Record di lancio in lungo: Mattia Detector89 lancia il Voyager a 52 metri di distanza
+                              </h3>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg border-4 p-3 cursor-pointer border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/img_article_1.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-cover rounded-xl"
+                            />
+                            <div class="p-4 bg-opacity-50">
+                              <h3 class="text-center font-bold text-2xl mb-2">
+                                Record di lancio in lungo: Mattia Detector89 lancia il Voyager a 52 metri di distanza
+                              </h3>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg border-4 p-3 cursor-pointer border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/img_article_1.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-cover rounded-xl"
+                            />
+                            <div class="p-4 bg-opacity-50">
+                              <h3 class="text-center font-bold text-2xl mb-2">
+                                Record di lancio in lungo: Mattia Detector89 lancia il Voyager a 52 metri di distanza
+                              </h3>
+                            </div>
+                          </div>
+                          <!-- Repeat the above div block for each item -->
+                    </div>
+                    <!-- More slides here -->
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-8 p-4 max-w-7xl mx-auto">
+                <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                    <img src="./assets/img_article_1.png" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                    <div class="space-y-1">
+                        <p class="text-xs">Emilio G</p>
+                        <p class="text-lg leading-none lg:text-3xl font-bold">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                        </p>
+                        <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                            Curiosita
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                    <img src="../assets/img_article_2.jpg" alt="" class="rounded-md w-24 lg:w-44 h-24 lg:h-44 object-cover">
+                    <div class="space-y-1">
+                        <p class="text-xs">Emilio G</p>
+                        <p class="text-lg leading-none lg:text-3xl font-bold">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                        </p>
+                        <p class="bg-green-300 px-4 w-fit py-1 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                            Curiosita
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SchedeTechniche Component -->
+            <div class="schede-techniche-component mb-20">
+                <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
+                    <h2 class="text-3xl md:text-5xl font-bold text-green-700">Schede Techniche</h2>
+                    <div class="flex items-center self-end">
+                        <p class="text-green-700 font-bold mr-4 uppercase text-xl">Tutte le Schede</p>
+                        <button id="schede-prev" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="schede-next" class="mx-2 bg-green-600 text-white text-lg py-2 px-4 rounded-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="slider schede-slider pt-12">
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg py-4 cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_3.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-3 p-3">
+                              <h3 class="text-2xl font-bold text-center">Scheda Tecnica Nokta FindX</h3>
+                              <button class="bg-green-500 hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                                Vai alla scheda
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg py-4 cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_2.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-3 p-3">
+                              <h3 class="text-2xl font-bold text-center">Scheda Tecnica Nokta FindX</h3>
+                              <button class="bg-green-500 hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                                Vai alla scheda
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg py-4 cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_1.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-3 p-3">
+                              <h3 class="text-2xl font-bold text-center">Scheda Tecnica Nokta FindX</h3>
+                              <button class="bg-green-500 hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                                Vai alla scheda
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg py-4 cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_2.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-3 p-3">
+                              <h3 class="text-2xl font-bold text-center">Scheda Tecnica Nokta FindX</h3>
+                              <button class="bg-green-500 hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                                Vai alla scheda
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg py-4 cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_3.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-3 p-3">
+                              <h3 class="text-2xl font-bold text-center">Scheda Tecnica Nokta FindX</h3>
+                              <button class="bg-green-500 hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                                Vai alla scheda
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="px-2" style="width: calc(100vw - 130px);">
+                        <div class="bg-white rounded-xl shadow-lg py-4 cursor-pointer border-4 border-green-300 hover:border-green-400 transition-all">
+                            <img
+                              src="./assets/metal_2.png"
+                              alt="Placeholder 1"
+                              class="w-full h-64 object-contain"
+                            />
+                            <div class="flex flex-col items-center gap-3 p-3">
+                              <h3 class="text-2xl font-bold text-center">Scheda Tecnica Nokta FindX</h3>
+                              <button class="bg-green-500 hover:bg-green-600 w-full text-white uppercase font-semibold py-2 px-4 rounded-xl transition-all">
+                                Vai alla scheda
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <!-- More slides here -->
                 </div>
             </div>
         </div>
-      
-       
-      </div>
+    </div>
 
-    <footer class=" sticky top-full">
-        <div class="bg-green-700 py-8 px-6 text-white">
-          <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
-            <div class="lg:w-4/5">
-              <img src="./assets/FooterLogo.png" alt="Detector Mania" class="mb-3"/>
-              <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore expedita aliquid doloremque pariatur in aliquam rerum accusamus nemo aut.</p>
+    <!-- Sticky component on the right -->
+    <div class="relative w-full md:w-1/3 md:border-l-2 md:pl-10 mb-12">
+        <div class="sticky top-0 md:top-5">
+            <div class="sticky z-10 mb-20 px-6 md:px-0">
+                <!-- Advertisement Image -->
+                <div class="h-64 border w-full">
+                    <img src="../assets/ads.jpeg" alt="Ads" class="w-full h-64 object-cover">
+                </div>
+                
+                <!-- Divider -->
+                <hr class="border border-b-gray-500 my-5" />
+        
+                <!-- Trends Section -->
+                <h2 class="flex items-center gap-2 my-5 text-3xl uppercase font-semibold text-green-700">
+                    <i class="fas fa-fire"></i> Trends
+                </h2>
+                <div class="flex flex-wrap gap-2">
+                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Nokta marko</a>
+                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garet</a>
+                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">News</a>
+                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Garrett</a>
+                    <a href="/" class="bg-green-700 font-semibold text-white uppercase rounded-md px-2 py-1">Lorem ipsum</a>
+                </div>
+        
+                <!-- Divider -->
+                <hr class="border border-b-gray-500 my-5" />
+        
+                <!-- I Migliori Section -->
+                <h2 class="text-3xl uppercase mb-7 font-semibold text-green-700">I Migliori</h2>
+                <div class="flex flex-col gap-5">
+                    <!-- Article Link -->
+                    <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                        <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                        <div class="space-y-1">
+                            <p class="text-xs">Emilio G</p>
+                            <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                            </p>
+                            <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                Curiosita
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                        <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                        <div class="space-y-1">
+                            <p class="text-xs">Emilio G</p>
+                            <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                            </p>
+                            <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                Curiosita
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                        <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                        <div class="space-y-1">
+                            <p class="text-xs">Emilio G</p>
+                            <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                            </p>
+                            <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                Curiosita
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5 cursor-pointer hover:opacity-70">
+                        <img src="./assets/img_article_1.png" alt="" class="rounded-md w-28 h-28 object-cover">
+                        <div class="space-y-1">
+                            <p class="text-xs">Emilio G</p>
+                            <p class="text-base hover:underline md:text-xs lg:text-base font-bold">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, praesentium.
+                            </p>
+                            <p class="bg-green-300 px-4 w-fit py-0 text-green-600 rounded-xl inline-block text-xs md:text-sm font-extralight">
+                                Curiosita
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Scopri Tutte Le Guide Section -->
+                <h2 class="text-2xl uppercase mb-7 font-semibold text-green-700 my-7">Scopri Tutte Le Guide</h2>
+        
+                <!-- Divider -->
+                <hr class="border border-b-gray-400 my-5" />
+        
+                <!-- Seguici Sui Social Section -->
+                <h2 class="text-3xl uppercase my-7 font-semibold text-green-700">Seguici Sui Social</h2>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <img src="../assets/facebook.png" alt="facebook" class="w-14">
+                        <p class="font-semibold">Facebook</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <i class="fab fa-instagram text-3xl"></i>
+                        <p class="font-semibold">Instagram</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <img src="./assets/threads.png" alt="whatsapp" class="w-8">
+                        <p class="font-semibold">Threads</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <i class="fab fa-twitter text-3xl"></i>
+                        <p class="font-semibold">Twitter</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <img src="../assets/whatsapp.png" alt="whatsapp" class="w-8">
+                        <p class="font-semibold">Whatsapp</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <img src="../assets/telegram.png" alt="telegram" class="w-8">
+                        <p class="font-semibold">Telegram</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <img src="../assets/spotify.png" alt="spotify" class="w-10">
+                        <p class="font-semibold">Spotify</p>
+                    </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 border-2 rounded-md py-1 px-2 border-gray-400">
+                        <img src="../assets/tiktok.png" alt="Tik Tok" class="w-7">
+                        <p class="font-semibold">Tik Tok</p>
+                    </a>
+                </div>
             </div>
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl font-semibold">Categorie</h2>
-              <ul class="flex flex-col gap-2">
-                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">News</a></li>
-                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Metal Detecting</a></li>
-                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Metal Detector per Tutti</a></li>
-              </ul>
-            </div>
-            <div class="flex flex-col gap-3">
-              <h2 class="text-2xl font-semibold">Link Utili</h2>
-              <ul class="flex flex-col gap-2">
-                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Chi Siamo</a></li>
-                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Contatti</a></li>
-                <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Ultimi articoli</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-        <div class="bg-gray-800 py-4 px-2 text-white">
-          <p class="text-xs text-center">Copyrights <i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear());</script> <span class="font-semibold">Detector Mania</span> | Lorem ipsum dolor sit. | Privacy e Cookie Policy - Redazione - design by <span class="font-semibold">Cromia</span></p>
-        </div>
-      </footer>
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                infinite: true,
-                speed: 500,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: false,
-                responsive: [
-                    {
-                        breakpoint: 1280,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                        },
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            centerMode: false,
-                            centerPadding: '0px',
-                            variableWidth: true,
-                        },
-                    },
-                ],
-            });
-
-            $('#next').click(function(){
-                $('.slider').slick('slickNext');
-            });
-
-            $('#prev').click(function(){
-                $('.slider').slick('slickPrev');
-            });
-        });
-    </script>
-
-    <script>
-        const darkMode = false;
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('bg-gray-800');
-            document.body.classList.toggle('text-white');
-            document.body.classList.toggle('bg-white');
-            document.body.classList.toggle('text-gray-900');
-        }
-
-        function toggleNotifications() {
-            document.getElementById('notifications').classList.toggle('hidden');
-        }
-
-        function toggleSearch() {
-            const searchInput = document.getElementById('searchInput');
-            const clearSearch = document.getElementById('clearSearch');
-            searchInput.classList.toggle('hidden');
-            clearSearch.classList.toggle('hidden');
-        }
-
-        function clearSearch() {
-            const searchInput = document.getElementById('searchInput');
-            searchInput.value = '';
-            toggleSearch();
-        }
-
-        function showMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('hidden');
-            document.getElementById('mobileNavLinks').classList.add('flex');
-        }
-
-        function hideMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('flex');
-            document.getElementById('mobileNavLinks').classList.add('hidden');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const darkMode = false; // Set this based on your theme context or user preference
-            const body = document.querySelector('body');
-            if (darkMode) {
-              body.classList.replace('bg-white', 'bg-gray-800');
-              body.classList.replace('text-gray-900', 'text-white');
-            }
-          });
-
-    </script>
+    </div>
 </div>
+</div>
+
+
+</div>
+
+<footer class=" sticky top-full">
+<div class="bg-green-700 py-8 px-6 text-white">
+<div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
+<div class="lg:w-4/5">
+  <img src="./assets/FooterLogo.png" alt="Detector Mania" class="mb-3"/>
+  <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore expedita aliquid doloremque pariatur in aliquam rerum accusamus nemo aut.</p>
+</div>
+<div class="flex flex-col gap-3">
+  <h2 class="text-2xl font-semibold">Categorie</h2>
+  <ul class="flex flex-col gap-2">
+    <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">News</a></li>
+    <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Metal Detecting</a></li>
+    <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Metal Detector per Tutti</a></li>
+  </ul>
+</div>
+<div class="flex flex-col gap-3">
+  <h2 class="text-2xl font-semibold">Link Utili</h2>
+  <ul class="flex flex-col gap-2">
+    <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Chi Siamo</a></li>
+    <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Contatti</a></li>
+    <li><a class="hover:underline hover:text-gray-300 transition-all text-white" href="#">Ultimi articoli</a></li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="bg-gray-800 py-4 px-2 text-white">
+<p class="text-xs text-center">Copyrights <i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear());</script> <span class="font-semibold">Detector Mania</span> | Lorem ipsum dolor sit. | Privacy e Cookie Policy - Redazione - design by <span class="font-semibold">Cromia</span></p>
+</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Slick Carousel JS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- Custom Scripts -->
+<script>
+    $(document).ready(function(){
+        // Slick carousel initialization
+        $('.recensioni-slider').slick({
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1280,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        variableWidth: true,
+                    },
+                },
+            ],
+        });
+
+        $('#recensioni-next').click(function(){
+            $('.recensioni-slider').slick('slickNext');
+        });
+
+        $('#recensioni-prev').click(function(){
+            $('.recensioni-slider').slick('slickPrev');
+        });
+
+        $('.offerte-slider').slick({
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1280,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        variableWidth: true,
+                    },
+                },
+            ],
+        });
+
+        $('#offerte-next').click(function(){
+            $('.offerte-slider').slick('slickNext');
+        });
+
+        $('#offerte-prev').click(function(){
+            $('.offerte-slider').slick('slickPrev');
+        });
+
+        $('.detector-slider').slick({
+            infinite: true,
+            speed: 500,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 780,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        variableWidth: true,
+                    },
+                },
+            ],
+        });
+
+        $('#detector-next').click(function(){
+            $('.detector-slider').slick('slickNext');
+        });
+
+        $('#detector-prev').click(function(){
+            $('.detector-slider').slick('slickPrev');
+        });
+
+        $('.schede-slider').slick({
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1280,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    },
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        centerMode: false,
+                        centerPadding: '0px',
+                        variableWidth: true,
+                    },
+                },
+            ],
+        });
+
+        $('#schede-next').click(function(){
+            $('.schede-slider').slick('slickNext');
+        });
+
+        $('#schede-prev').click(function(){
+            $('.schede-slider').slick('slickPrev');
+        });
+
+        // Custom functions
+        $('#notificationIcon').click(function() {
+            $('#notifications').toggleClass('hidden');
+        });
+
+        $('#mobileMenuIcon').click(function() {
+            $('#mobileNavLinks').removeClass('hidden');
+        });
+
+        $('#mobileNavLinks').click(function() {
+            $(this).addClass('hidden');
+        });
+
+        $('#clearSearch').click(function() {
+            $('#searchInput').val('');
+        });
+    });
+
+    function toggleDarkMode() {
+    // Check if the dark mode class is already present
+    if (document.body.classList.contains('dark-mode')) {
+        // If present, remove it
+        document.body.classList.remove('dark-mode');
+        // Optionally, you can also store the user preference in localStorage
+        localStorage.setItem('theme', 'light');
+    } else {
+        // If not present, add it
+        document.body.classList.add('dark-mode');
+        // Optionally, store the user preference in localStorage
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// On page load, check localStorage for theme preference
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+});
+
+
+    function toggleSearch() {
+        $('#searchInput').toggleClass('hidden');
+        $('#clearSearch').toggleClass('hidden');
+        $('.fa-magnifying-glass').toggleClass('hidden');
+    }
+
+    function hideMobileLinks() {
+        $('#mobileNavLinks').addClass('hidden');
+    }
+
+    function clearSearch() {
+        $('#searchInput').val('');
+    }
+</script>
+</body>
 </html>
