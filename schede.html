@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Enhanced Navbar</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" rel="stylesheet">
     <style>
+        /* Your existing styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
@@ -16,11 +29,150 @@
         .mobile-menu.active {
             transform: translateX(0);
         }
+
+        #navigation {
+            width: 100%;
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode #navigation {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+        }
+
+        .bg-green-700 {
+            background-color: #006400;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-items a {
+            color: inherit;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        .nav-items a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+        }
+
+        .custom-search-container {
+            position: relative;
+            display: inline-block;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .custom-searchbutton {
+            position: absolute;
+            font-size: 20px;
+            width: 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .custom-search {
+            position: absolute;
+            right: 0;
+            background-color: white;
+            outline: none;
+            border: none;
+            padding: 0;
+            width: 0;
+            height: 100%;
+            transition: width 0.4s ease;
+            text-indent: 10px;
+        }
+
+        .custom-search:focus {
+            width: 240px; /* Adjust width as needed */
+            padding: 0 10px;
+        }
+
+        .dark-mode .custom-search {
+            background-color: #333;
+            color: #e0e0e0;
+        }
+
+        #notifications {
+            display: none;
+        }
+
+        #notifications.show {
+            display: block;
+        }
+
+        #mobileNavLinks {
+            display: none;
+        }
+
+        #mobileNavLinks.show {
+            display: flex;
+        }
+
+        .fixed-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-nav-content {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 75%;
+            height: 100%;
+            background: #fff;
+            padding: 2rem;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            overflow-y: auto;
+        }
+
+        .mobile-nav-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-content li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav-content a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-nav-content a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
     <div id="navigation" class="relative w-full bg-white text-gray-900 transition-colors duration-300">
-        <div class="bg-green-700 py-2 "></div>
+        <div class="bg-green-500 py-2"></div>
         <div class="max-w-7xl mx-auto px-6 py-10 flex items-center justify-between relative">
             <a href="index.html">
                 <img src="./assets/logo.png" alt="Detector Mania" class="w-44 md:w-56">
@@ -33,7 +185,7 @@
                 <li><a href="trekking.html" class="hover:text-green-600 transition-all">Trekking</a></li>
                 <li class="flex items-center gap-1">
                     <p><a href="#recension">Recension</a></p>
-                    <p class="text-xs p-1 rounded-md bg-yellow-100 flex items-center gap-1">New <img class="w-3" src="path/to/flammable.svg" alt=""></p>
+                    <p class="text-xs p-1 rounded-md bg-yellow-100 flex items-center gap-1">New <img class="w-3" src="./assets/flammable.svg" alt=""></p>
                 </li>
                 <li><a href="schede.html" class="hover:text-green-600 transition-all">Schede Tecniche</a></li>
                 <li><a href="arte.html" class="hover:text-green-600 transition-all">Arte e storia</a></li>
@@ -41,9 +193,9 @@
             </ul>
 
             <div class="flex items-center gap-5 text-xl relative">
-                <i class="fas fa-circle-half-stroke text-xl cursor-pointer" onclick="toggleDarkMode()"></i>
+                <i class="fas fa-circle-half-stroke text-xl cursor-pointer" id="toggle-dark-mode"></i>
                 <div class="relative">
-                    <i class="fas fa-bell cursor-pointer relative text-gray-900" onclick="toggleNotifications()"></i>
+                    <i class="fas fa-bell cursor-pointer relative" id="toggle-notifications"></i>
                     <div class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border border-red-500"></div>
                     <div id="notifications" class="hidden absolute z-20 top-full right-0 mt-2 w-64 border rounded-md shadow-lg bg-white text-gray-900 border-gray-300">
                         <div class="p-4">
@@ -58,18 +210,17 @@
                     </div>
                 </div>
                 <div class="relative flex items-center">
-                    <i class="fas fa-magnifying-glass bg-green-700 text-white p-2 rounded-md cursor-pointer" onclick="toggleSearch()"></i>
-                    <input id="searchInput" type="text" placeholder="Search..." class="hidden p-2 pl-10 border rounded-l-lg outline-none transition-transform duration-300 ease-in-out">
-                    <button id="clearSearch" class="hidden p-2 text-white bg-red-500 rounded-r-lg transition-transform duration-300 ease-in-out" onclick="clearSearch()">
-                        <i class="fas fa-x"></i>
-                    </button>
+                    <div class="custom-search-container">
+                        <i class="fas fa-magnifying-glass bg-green-700 text-white p-2 rounded-md cursor-pointer" id="toggle-search"></i>
+                        <input id="searchInput" type="text" placeholder="Search..." class="custom-search hidden p-2 pr-10 border rounded-l-lg outline-none transition-transform duration-300 ease-in-out">
+                    </div>
                 </div>
-                <i class="fas fa-bars bg-green-700 text-white p-2 text-4xl rounded-md cursor-pointer" onclick="showMobileLinks()"></i>
+                <i class="fas fa-bars bg-green-700 text-white p-2 text-2xl rounded-md cursor-pointer" id="show-mobile-nav"></i>
             </div>
         </div>
         <div id="mobileNavLinks" class="fixed inset-0 z-20 flex hidden">
-            <div class="fixed inset-0 bg-black opacity-50" onclick="hideMobileLinks()"></div>
-            <div class="absolute top-0 right-0 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-full p-5 shadow-lg bg-white text-gray-900 transition-transform duration-300 ease-in-out">
+            <div class="fixed-overlay" onclick="hideMobileLinks()"></div>
+            <div class="mobile-nav-content">
                 <h4 class="text-3xl absolute top-12 right-12 cursor-pointer" onclick="hideMobileLinks()">
                     <i class="fas fa-x"></i>
                 </h4>
@@ -80,7 +231,7 @@
                     <li><a href="trekking.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Trekking</a></li>
                     <li class="flex items-center gap-2">
                         <p><a href="#recension" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Recension</a></p>
-                        <p class="text-xs p-1 rounded-md bg-yellow-100 text-black flex items-center gap-1"><img class="w-3" src="path/to/flammable.svg" alt=""> New</p>
+                        <p class="text-xs p-1 rounded-md bg-yellow-100 text-black flex items-center gap-1"><img class="w-3" src="./assets/flammable.svg" alt=""> New</p>
                     </li>
                     <li><a href="schede.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Schede Tecniche</a></li>
                     <li><a href="arte.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Arte e storia</a></li>
@@ -89,7 +240,6 @@
             </div>
         </div>
     </div>
-
 
     <main class="p-4 xl:px-14">
         <section class="max-w-7xl mx-auto">
@@ -706,19 +856,8 @@
     </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
     <footer class=" sticky top-full">
-        <div class="bg-green-700 py-8 px-6 text-white">
+        <div class="bg-green-500 py-8 px-6 text-white">
           <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
             <div class="lg:w-4/5">
               <img src="./assets/FooterLogo.png" alt="Detector Mania" class="mb-3"/>
@@ -747,22 +886,72 @@
         </div>
       </footer>
 
-      <script>
-        // JavaScript function to toggle overlay visibility
-        function toggleOverlay() {
-            const overlay = document.getElementById('filter-overlay');
-            overlay.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden'); // Prevent page scroll
-        }
+      <!-- Include jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-        // JavaScript function to toggle filter sections
-        function toggleSection(section) {
-            const content = document.getElementById(`${section}-content`);
-            const icon = document.getElementById(`${section}-icon`);
-            content.classList.toggle('hidden');
-            icon.classList.toggle('fa-chevron-right');
-            icon.classList.toggle('fa-chevron-down');
-        }
-      </script>
+        <script>
+            $(document).ready(function(){
+                // Toggle dark mode
+                $('#toggle-dark-mode').click(function () {
+                    $('body').toggleClass('dark-mode');
+                });
+
+                // Toggle notifications
+                $('#toggle-notifications').click(function () {
+                    $('#notifications').toggleClass('show');
+                });
+
+                // Toggle search
+                $('#toggle-search').click(function () {
+                    const searchInput = $('#searchInput');
+                    searchInput.toggleClass('hidden');
+                    if (!searchInput.hasClass('hidden')) {
+                        searchInput.focus();
+                    }
+                });
+
+                // Show mobile navigation links
+                $('#show-mobile-nav').click(function () {
+                    $('#mobileNavLinks').addClass('show');
+                });
+
+                // Hide mobile navigation links
+                $('#mobileNavLinks, .fixed-overlay').click(function () {
+                    $('#mobileNavLinks').removeClass('show');
+                });
+
+                // Toggle overlay visibility
+                function toggleOverlay() {
+                    $('#filter-overlay').toggleClass('hidden');
+                    $('body').toggleClass('overflow-hidden');
+                }
+
+                // Toggle filter sections
+                function toggleSection(section) {
+                    const content = $(`#${section}-content`);
+                    const icon = $(`#${section}-icon`);
+                    content.toggleClass('hidden');
+                    icon.toggleClass('fa-chevron-right fa-chevron-down');
+                }
+
+                // Custom functions for additional interactivity
+                $('#notificationIcon').click(function() {
+                    $('#notifications').toggleClass('hidden');
+                });
+
+                $('#mobileMenuIcon').click(function() {
+                    $('#mobileNavLinks').removeClass('hidden');
+                });
+
+                $('#mobileNavLinks').click(function() {
+                    $(this).addClass('hidden');
+                });
+
+                $('#clearSearch').click(function() {
+                    $('#searchInput').val('');
+                });
+            });
+        </script>
+
 </body>
 </html>

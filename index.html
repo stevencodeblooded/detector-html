@@ -28,6 +28,7 @@
             margin: 0;
             padding: 0;
             background-color: #fff;
+            scroll-behavior: smooth;
         }
 
         .dark-mode {
@@ -178,8 +179,8 @@
 </head>
 
 <body class="min-h-screen">
-    <div id="navigation" class="relative w-full bg-white text-gray-900 transition-colors duration-300">
-        <div class="bg-green-700 py-2"></div>
+    <div id="navigation" class="relative w-full transition-colors duration-300">
+        <div class="bg-green-500 py-2"></div>
         <div class="max-w-7xl mx-auto px-6 py-10 flex items-center justify-between relative">
             <a href="index.html">
                 <img src="./assets/logo.png" alt="Detector Mania" class="w-44 md:w-56">
@@ -248,7 +249,7 @@
         </div>
     </div>
 
-    <div class="p-4 bg-white text-gray-900 transition-colors duration-300">
+    <div class="p-4 transition-colors duration-300">
 
         <div class="max-w-7xl mx-auto px-2 my-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -305,7 +306,7 @@
     <div class="w-full md:w-2/3">
         <div class="flex flex-col gap-12">
             <!-- Slider Component -->
-            <div class="slider-component">
+            <div class="slider-component my-6 md:my-12">
                 <div class="flex flex-col lg:flex-row items-start justify-between lg:items-center">
                     <h2 class="text-3xl md:text-5xl font-bold text-green-700">Recensioni</h2>
                     <div class="flex items-center self-end">
@@ -961,11 +962,15 @@
 </div>
 
 <footer class=" sticky top-full">
-<div class="bg-green-700 py-8 px-6 text-white">
+<div class="bg-green-500 py-8 px-6 text-white">
 <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
 <div class="lg:w-4/5">
   <img src="./assets/FooterLogo.png" alt="Detector Mania" class="mb-3"/>
-  <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur labore expedita aliquid doloremque pariatur in aliquam rerum accusamus nemo aut.</p>
+  <p class="text-xs">Questo blog non rappresenta una testata
+    giornalistica in quanto viene aggiornato senza
+    alcuna periodicità. Non può pertanto
+    considerarsi un prodotto editoriale ai sensi della
+    legge n° 62 del 7.03.2001.</p>
 </div>
 <div class="flex flex-col gap-3">
   <h2 class="text-2xl font-semibold">Categorie</h2>
@@ -986,7 +991,7 @@
 </div>
 </div>
 <div class="bg-gray-800 py-4 px-2 text-white">
-<p class="text-xs text-center">Copyrights <i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear());</script> <span class="font-semibold">Detector Mania</span> | Lorem ipsum dolor sit. | Privacy e Cookie Policy - Redazione - design by <span class="font-semibold">Cromia</span></p>
+<p class="text-xs text-center">Copyrights <i class="far fa-copyright"></i> <script>document.write(new Date().getFullYear());</script> <span class="font-semibold">Detector Mania</span> | Tutti i diritti riservati. | Privacy e Cookie Policy - Redazione - design by <span class="font-semibold">Cromia</span></p>
 </div>
 </footer>
 
