@@ -3,12 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Detector Mania</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" rel="stylesheet">
     <style>
+        /* Your existing styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        #navigation {
+            width: 100%;
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode #navigation {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+        }
+
+        .bg-green-700 {
+            background-color: #006400;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-items a {
+            color: inherit;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        .nav-items a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+        }
+
+        .custom-search-container {
+            position: relative;
+            display: inline-block;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .custom-searchbutton {
+            position: absolute;
+            font-size: 20px;
+            width: 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .custom-search {
+            position: absolute;
+            right: 0;
+            background-color: white;
+            outline: none;
+            border: none;
+            padding: 0;
+            width: 0;
+            height: 100%;
+            transition: width 0.4s ease;
+            text-indent: 10px;
+        }
+
+        .custom-search:focus {
+            width: 240px; /* Adjust width as needed */
+            padding: 0 10px;
+        }
+
+        .dark-mode .custom-search {
+            background-color: #333;
+            color: #e0e0e0;
+        }
+
+        #notifications {
+            display: none;
+        }
+
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
@@ -19,11 +120,90 @@
         .transition-colors {
             transition: background-color 0.3s, color 0.3s;
         }
+
+        #notifications.show {
+            display: block;
+        }
+
+        #mobileNavLinks {
+            display: none;
+        }
+
+        #mobileNavLinks.show {
+            display: flex;
+        }
+
+        .fixed-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-nav-content {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 75%;
+            height: 100%;
+            background: #fff;
+            padding: 2rem;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            overflow-y: auto;
+        }
+
+        .mobile-nav-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-content li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-nav-content a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-nav-content a:hover {
+            text-decoration: underline;
+        }
+
+        .comparison-container {
+            position: relative;
+        }
+
+        .vs-line {
+            content: "";
+            width: 2px;
+            height: 80%; /* ----change the height as deemed fit*/
+            background-color: hsl(125, 50%, 59%);
+            position: absolute;
+            left: 50%;
+            top: 3%;
+            transform: translateX(-50%);
+        }
+
+        .vs-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 0 5px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+        }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
     <div id="navigation" class="relative w-full bg-white text-gray-900 transition-colors duration-300">
-        <div class="bg-green-700 py-2 "></div>
+        <div class="bg-green-500 py-2"></div>
         <div class="max-w-7xl mx-auto px-6 py-10 flex items-center justify-between relative">
             <a href="index.html">
                 <img src="./assets/logo.png" alt="Detector Mania" class="w-44 md:w-56">
@@ -36,7 +216,7 @@
                 <li><a href="trekking.html" class="hover:text-green-600 transition-all">Trekking</a></li>
                 <li class="flex items-center gap-1">
                     <p><a href="#recension">Recension</a></p>
-                    <p class="text-xs p-1 rounded-md bg-yellow-100 flex items-center gap-1">New <img class="w-3" src="path/to/flammable.svg" alt=""></p>
+                    <p class="text-xs p-1 rounded-md bg-yellow-100 text-black flex items-center gap-1">New <img class="w-3" src="./assets/flammable.svg" alt=""></p>
                 </li>
                 <li><a href="schede.html" class="hover:text-green-600 transition-all">Schede Tecniche</a></li>
                 <li><a href="arte.html" class="hover:text-green-600 transition-all">Arte e storia</a></li>
@@ -44,9 +224,9 @@
             </ul>
 
             <div class="flex items-center gap-5 text-xl relative">
-                <i class="fas fa-circle-half-stroke text-xl cursor-pointer" onclick="toggleDarkMode()"></i>
+                <i class="fas fa-circle-half-stroke text-xl cursor-pointer" id="toggle-dark-mode"></i>
                 <div class="relative">
-                    <i class="fas fa-bell cursor-pointer relative text-gray-900" onclick="toggleNotifications()"></i>
+                    <i class="fas fa-bell cursor-pointer relative " id="toggle-notifications"></i>
                     <div class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border border-red-500"></div>
                     <div id="notifications" class="hidden absolute z-20 top-full right-0 mt-2 w-64 border rounded-md shadow-lg bg-white text-gray-900 border-gray-300">
                         <div class="p-4">
@@ -61,18 +241,17 @@
                     </div>
                 </div>
                 <div class="relative flex items-center">
-                    <i class="fas fa-magnifying-glass bg-green-700 text-white p-2 rounded-md cursor-pointer" onclick="toggleSearch()"></i>
-                    <input id="searchInput" type="text" placeholder="Search..." class="hidden p-2 pl-10 border rounded-l-lg outline-none transition-transform duration-300 ease-in-out">
-                    <button id="clearSearch" class="hidden p-2 text-white bg-red-500 rounded-r-lg transition-transform duration-300 ease-in-out" onclick="clearSearch()">
-                        <i class="fas fa-x"></i>
-                    </button>
+                    <div class="custom-search-container">
+                        <i class="fas fa-magnifying-glass bg-green-700 text-white p-2 rounded-md cursor-pointer" id="toggle-search"></i>
+                        <input id="searchInput" type="text" placeholder="Search..." class="custom-search hidden p-2 pr-10 border rounded-l-lg outline-none transition-transform duration-300 ease-in-out">
+                    </div>
                 </div>
-                <i class="fas fa-bars bg-green-700 text-white p-2 text-4xl rounded-md cursor-pointer" onclick="showMobileLinks()"></i>
+                <i class="fas fa-bars bg-green-700 text-white p-2 text-2xl rounded-md cursor-pointer" id="show-mobile-nav"></i>
             </div>
         </div>
         <div id="mobileNavLinks" class="fixed inset-0 z-20 flex hidden">
-            <div class="fixed inset-0 bg-black opacity-50" onclick="hideMobileLinks()"></div>
-            <div class="absolute top-0 right-0 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-full p-5 shadow-lg bg-white text-gray-900 transition-transform duration-300 ease-in-out">
+            <div class="fixed-overlay" onclick="hideMobileLinks()"></div>
+            <div class="mobile-nav-content">
                 <h4 class="text-3xl absolute top-12 right-12 cursor-pointer" onclick="hideMobileLinks()">
                     <i class="fas fa-x"></i>
                 </h4>
@@ -83,7 +262,7 @@
                     <li><a href="trekking.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Trekking</a></li>
                     <li class="flex items-center gap-2">
                         <p><a href="#recension" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Recension</a></p>
-                        <p class="text-xs p-1 rounded-md bg-yellow-100 text-black flex items-center gap-1"><img class="w-3" src="path/to/flammable.svg" alt=""> New</p>
+                        <p class="text-xs p-1 rounded-md bg-yellow-100 text-black flex items-center gap-1"><img class="w-3" src="./assets/flammable.svg" alt=""> New</p>
                     </li>
                     <li><a href="schede.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Schede Tecniche</a></li>
                     <li><a href="arte.html" class="hover:text-green-600 transition-all" onclick="hideMobileLinks()">Arte e storia</a></li>
@@ -93,112 +272,319 @@
         </div>
     </div>
 
-    <div id="confronto-screen" class="p-4 bg-white text-gray-900 transition-colors duration-300">
+    <div id="confronto-screen" class="p-4 transition-colors duration-300">
         <!-- HeaderConfronto component HTML -->
         <div class="max-w-7xl mx-auto px-3 mb-4">
             <h1 class="text-3xl md:text-5xl font-bold mb-3">Confronto tra</h1>
             <p class="text-lg lg:text-2xl font-semibold text-gray-400">Nokta FindX e Garrett Apex</p>
         </div>
-
-        <!-- Comparison component HTML -->
-        <div class="max-w-7xl mx-auto pt-8 pb-24 px-3">
-            <div class="flex flex-col items-center justify-center">
-                <div class="w-full flex justify-around items-center space-y-8 md:space-y-0 md:space-x-8 border-4 border-emerald-300 hover:border-emerald-400 transition-all rounded-2xl lg:py-20 lg:px-8 py-6 px-4">
-                    <!-- Nokta Makro FindX -->
-                    <div class="w-1/2">
-                        <div class="flex gap-5">
-                            <h2 class="hidden md:block text-2xl mt-5 font-bold mb-4 text-center">Nokta Makro FindX</h2>
-                            <div class="flex justify-center mb-4">
-                                <img src="https://via.placeholder.com/150" alt="Nokta Makro FindX" class="w-52 mx-auto" />
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-3 mb-12">
-                            <div class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md">
-                                <svg class="text-base md:text-xl" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 4.5l7.5 7.5-7.5 7.5-7.5-7.5L12 4.5z"/>
-                                </svg>
-                                <div>
-                                    <h3 class="text-sm md:text-lg uppercase font-semibold">LCD</h3>
-                                    <p class="uppercase text-xs">Disponsible</p>
-                                </div>
-                            </div>
-                            <!-- Repeat the above div for other items -->
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="font-semibold">TIPO DI CONNESSIONI</h3>
-                            <div class="grid md:grid-cols-2 gap-3 mb-12">
-                                <div class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md">
-                                    <svg class="text-base md:text-xl" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 4.5l7.5 7.5-7.5 7.5-7.5-7.5L12 4.5z"/>
-                                    </svg>
-                                    <div>
-                                        <h3 class="text-sm md:text-lg uppercase font-semibold">LCD</h3>
-                                        <p class="uppercase text-xs">Disponsible</p>
-                                    </div>
-                                </div>
-                                <!-- Repeat the above div for other items -->
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Vertical line and VS text -->
-                    <div class="flex flex-col items-center justify-center">
-                        <div class="border-l-2 border-emerald-300 h-16"></div>
-                        <span class="text-2xl font-bold">VS</span>
-                        <div class="border-l-2 border-emerald-300 h-48"></div>
-                    </div>
-        
-                    <!-- Nokta The Legend -->
-                    <div class="w-1/2">
-                        <div class="flex gap-5">
-                            <h2 class="hidden md:block text-2xl mt-5 font-bold mb-4 text-center">Nokta Makro FindX</h2>
-                            <div class="flex justify-center mb-4">
-                                <img src="https://via.placeholder.com/150" alt="Nokta Makro FindX" class="w-52" />
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-3 mb-12">
-                            <div class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md">
-                                <svg class="text-base md:text-xl" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 4.5l7.5 7.5-7.5 7.5-7.5-7.5L12 4.5z"/>
-                                </svg>
-                                <div>
-                                    <h3 class="text-sm md:text-lg uppercase font-semibold">LCD</h3>
-                                    <p class="uppercase text-xs">Disponsible</p>
-                                </div>
-                            </div>
-                            <!-- Repeat the above div for other items -->
-                        </div>
-                        <div>
-                            <h3 class="font-semibold">TIPO DI CONNESSIONI</h3>
-                            <div class="grid md:grid-cols-2 gap-3 mb-12">
-                                <div class="flex items-center gap-2 md:gap-3 text-gray-900 bg-gray-200 px-3 py-1 rounded-md">
-                                    <svg class="text-base md:text-xl" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 4.5l7.5 7.5-7.5 7.5-7.5-7.5L12 4.5z"/>
-                                    </svg>
-                                    <div>
-                                        <h3 class="text-sm md:text-lg uppercase font-semibold">LCD</h3>
-                                        <p class="uppercase text-xs">Disponsible</p>
-                                    </div>
-                                </div>
-                                <!-- Repeat the above div for other items -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-
-
-
-
-
-
-
+    
+    <!-- Comparison component HTML -->
+    <div class="flex items-center justify-center max-w-7xl mx-auto min-h-screen comparison-container px-4 mb-20">
+      <div class="relative  max-w-7xl w-full transition-all md:border-4 md:border-green-300 md:p-6 md:hover:border-green-400  rounded-lg grid grid-cols-2 gap-4">
+          <div class="flex flex-col items-center">
+              <div class="flex gap-">
+                  <h2 class="hidden sm:block text-2xl lg:text-3xl font-bold mb-2 ">Nokta Makro FindX</h2>
+                  <img src="./assets/metal_3.png" alt="Device 1" class="w-44 h-44 object-contain mb-4 md:mb-8" />
+              </div>
+              <div class="w-full space-y-12">
+                  <div class="space-y-4 w-full">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                          <!-- Item blocks -->
+                          <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <!-- Repeat items as needed -->
+                      </div>
+                      <div>
+                        <h2 class="uppercase text-base md:text-lg lg:text-xl mb-2 md:mb-3 font-semibold">Tipo Di Connessioni</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                            <!-- Item blocks -->
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                      </div>
+                      <div>
+                        <h2 class="uppercase text-base md:text-lg lg:text-xl mb-2 md:mb-3 font-semibold">Altre Informazioni</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                            <!-- Item blocks -->
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                      </div>
+                      <div>
+                        <h2 class="uppercase text-base md:text-lg lg:text-xl mb-2 md:mb-3 font-semibold">Lorem Ipsum</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                            <!-- Item blocks -->
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="flex flex-col items-center">
+              <div class="flex">
+                  <h2 class="hidden order-2 sm:block text-2xl lg:text-3xl font-bold mb-2 ">Nokta The Legend</h2>
+                  <img src="./assets/metal_1.png" alt="Device 1" class="w-44 h-44 order-1 object-contain mb-4 md:mb-8" />
+              </div>
+              <div class="w-full space-y-12">
+                  <div class="space-y-4 w-full">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                          <!-- Item blocks -->
+                          <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                              <i class="fa-regular fa-eye text-xl"></i>
+                              <div>
+                                  <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                  <p class="uppercase text-xs">Disponibile</p>
+                              </div>
+                          </div>
+                          <!-- Repeat items as needed -->
+                      </div>
+                      <div>
+                        <h2 class="uppercase text-base md:text-lg lg:text-xl mb-2 md:mb-3 font-semibold">Tipo Di Connessioni</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                            <!-- Item blocks -->
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                      </div>
+                      <div>
+                        <h2 class="uppercase text-base md:text-lg lg:text-xl mb-2 md:mb-3 font-semibold">Altre Informazioni</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                            <!-- Item blocks -->
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                      </div>
+                      <div>
+                        <h2 class="uppercase text-base md:text-lg lg:text-xl mb-2 md:mb-3 font-semibold">Lorem Ipsum</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12">
+                            <!-- Item blocks -->
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-900 bg-gray-200 px-5 py-1 rounded-md w-full">
+                                <i class="fa-regular fa-eye text-xl"></i>
+                                <div>
+                                    <h3 class="text-lg uppercase font-semibold">LCD</h3>
+                                    <p class="uppercase text-xs">Disponibile</p>
+                                </div>
+                            </div>
+                            <!-- Repeat items as needed -->
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="vs-line"></div>
+      <div class="vs-text">VS</div>
+  </div>
+  
 
     <footer class=" sticky top-full">
-        <div class="bg-green-700 py-8 px-6 text-white">
+        <div class="bg-green-500 py-8 px-6 text-white">
           <div class="max-w-7xl mx-auto grid grid-cols-1 gap-10 lg:gap-20 sm:grid-cols-2 md:grid-cols-3">
             <div class="lg:w-4/5">
               <img src="./assets/FooterLogo.png" alt="Detector Mania" class="mb-3"/>
@@ -227,42 +613,39 @@
         </div>
       </footer>
 
-    <script>
-        const darkMode = false;
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script>
+        // Toggle dark mode
+        document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+        });
 
-        function toggleDarkMode() {
-            document.body.classList.toggle('bg-gray-800');
-            document.body.classList.toggle('text-white');
-            document.body.classList.toggle('bg-white');
-            document.body.classList.toggle('text-gray-900');
-        }
+        // Toggle notifications
+        document.getElementById('toggle-notifications').addEventListener('click', function () {
+            const notifications = document.getElementById('notifications');
+            notifications.classList.toggle('show');
+        });
 
-        function toggleNotifications() {
-            document.getElementById('notifications').classList.toggle('hidden');
-        }
-
-        function toggleSearch() {
+        // Toggle search
+        document.getElementById('toggle-search').addEventListener('click', function () {
             const searchInput = document.getElementById('searchInput');
-            const clearSearch = document.getElementById('clearSearch');
-            searchInput.classList.toggle('hidden');
-            clearSearch.classList.toggle('hidden');
-        }
+            if (searchInput.classList.contains('hidden')) {
+                searchInput.classList.remove('hidden');
+                searchInput.focus();
+            } else {
+                searchInput.classList.add('hidden');
+            }
+        });
 
-        function clearSearch() {
-            const searchInput = document.getElementById('searchInput');
-            searchInput.value = '';
-            toggleSearch();
-        }
+        // Show mobile navigation links
+        document.getElementById('show-mobile-nav').addEventListener('click', function () {
+            document.getElementById('mobileNavLinks').classList.add('show');
+        });
 
-        function showMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('hidden');
-            document.getElementById('mobileNavLinks').classList.add('flex');
-        }
-
+        // Hide mobile navigation links
         function hideMobileLinks() {
-            document.getElementById('mobileNavLinks').classList.remove('flex');
-            document.getElementById('mobileNavLinks').classList.add('hidden');
+            document.getElementById('mobileNavLinks').classList.remove('show');
         }
-    </script>
+      </script>
 </body>
 </html>
